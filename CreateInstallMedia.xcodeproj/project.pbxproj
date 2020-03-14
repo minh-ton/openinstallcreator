@@ -12,7 +12,6 @@
 		013DF76E24191D7C00BFBD17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013DF76D24191D7C00BFBD17 /* Assets.xcassets */; };
 		013DF77124191D7C00BFBD17 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013DF76F24191D7C00BFBD17 /* MainMenu.xib */; };
 		013DF77424191D7C00BFBD17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DF77324191D7C00BFBD17 /* main.m */; };
-		013DF7A42419D9AC00BFBD17 /* Picture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 013DF7A22419D9AC00BFBD17 /* Picture1.png */; };
 		0153DA1C241BD82800C01ACA /* installerLIB.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1B241BD82800C01ACA /* installerLIB.sh */; };
 		0153DA1E241BDF7B00C01ACA /* volumeLIB.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */; };
 		0153DA20241BE06300C01ACA /* InstallerValidation.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1F241BE06300C01ACA /* InstallerValidation.sh */; };
@@ -29,7 +28,6 @@
 		013DF77024191D7C00BFBD17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		013DF77224191D7C00BFBD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013DF77324191D7C00BFBD17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		013DF7A22419D9AC00BFBD17 /* Picture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture1.png; sourceTree = "<group>"; };
 		0153DA1B241BD82800C01ACA /* installerLIB.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = installerLIB.sh; sourceTree = "<group>"; };
 		0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = volumeLIB.sh; sourceTree = "<group>"; };
 		0153DA1F241BE06300C01ACA /* InstallerValidation.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = InstallerValidation.sh; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 				013DF76724191D7800BFBD17 /* Frameworks */,
 				013DF76624191D7800BFBD17 /* Products */,
 				0153DA29241C5C0800C01ACA /* Shell */,
-				013DF7A22419D9AC00BFBD17 /* Picture1.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,7 +162,6 @@
 				0153DA20241BE06300C01ACA /* InstallerValidation.sh in Resources */,
 				013DF76E24191D7C00BFBD17 /* Assets.xcassets in Resources */,
 				0153DA22241C52FB00C01ACA /* CPCheck.sh in Resources */,
-				013DF7A42419D9AC00BFBD17 /* Picture1.png in Resources */,
 				0153DA1E241BDF7B00C01ACA /* volumeLIB.sh in Resources */,
 				013DF77124191D7C00BFBD17 /* MainMenu.xib in Resources */,
 			);
