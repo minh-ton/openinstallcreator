@@ -13,12 +13,12 @@
 		013DF77124191D7C00BFBD17 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013DF76F24191D7C00BFBD17 /* MainMenu.xib */; };
 		013DF77424191D7C00BFBD17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DF77324191D7C00BFBD17 /* main.m */; };
 		013DF7A42419D9AC00BFBD17 /* Picture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 013DF7A22419D9AC00BFBD17 /* Picture1.png */; };
-		014E4313241B193C003C2100 /* pbzx in Resources */ = {isa = PBXBuildFile; fileRef = 014E4312241B193C003C2100 /* pbzx */; };
 		0153DA1C241BD82800C01ACA /* installerLIB.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1B241BD82800C01ACA /* installerLIB.sh */; };
 		0153DA1E241BDF7B00C01ACA /* volumeLIB.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */; };
 		0153DA20241BE06300C01ACA /* InstallerValidation.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1F241BE06300C01ACA /* InstallerValidation.sh */; };
 		0153DA22241C52FB00C01ACA /* CPCheck.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA21241C52FB00C01ACA /* CPCheck.sh */; };
 		0153DA24241C540E00C01ACA /* CPCheck2.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA23241C540E00C01ACA /* CPCheck2.sh */; };
+		0153DA28241C5BFF00C01ACA /* pbzx in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA27241C5BFF00C01ACA /* pbzx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,12 @@
 		013DF77224191D7C00BFBD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013DF77324191D7C00BFBD17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		013DF7A22419D9AC00BFBD17 /* Picture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture1.png; sourceTree = "<group>"; };
-		014E4312241B193C003C2100 /* pbzx */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = pbzx; path = "../New Group/pbzx"; sourceTree = "<group>"; };
 		0153DA1B241BD82800C01ACA /* installerLIB.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = installerLIB.sh; sourceTree = "<group>"; };
 		0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = volumeLIB.sh; sourceTree = "<group>"; };
 		0153DA1F241BE06300C01ACA /* InstallerValidation.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = InstallerValidation.sh; sourceTree = "<group>"; };
 		0153DA21241C52FB00C01ACA /* CPCheck.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CPCheck.sh; sourceTree = "<group>"; };
 		0153DA23241C540E00C01ACA /* CPCheck2.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CPCheck2.sh; sourceTree = "<group>"; };
+		0153DA27241C5BFF00C01ACA /* pbzx */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = pbzx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +56,8 @@
 				013DF76A24191D7800BFBD17 /* CreateInstallMedia */,
 				013DF76724191D7800BFBD17 /* Frameworks */,
 				013DF76624191D7800BFBD17 /* Products */,
+				0153DA29241C5C0800C01ACA /* Shell */,
 				013DF7A22419D9AC00BFBD17 /* Picture1.png */,
-				0153DA1B241BD82800C01ACA /* installerLIB.sh */,
-				0153DA1F241BE06300C01ACA /* InstallerValidation.sh */,
-				0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */,
-				0153DA21241C52FB00C01ACA /* CPCheck.sh */,
-				0153DA23241C540E00C01ACA /* CPCheck2.sh */,
-				014E4314241B194E003C2100 /* InstallerDownload */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,12 +89,17 @@
 			path = CreateInstallMedia;
 			sourceTree = "<group>";
 		};
-		014E4314241B194E003C2100 /* InstallerDownload */ = {
+		0153DA29241C5C0800C01ACA /* Shell */ = {
 			isa = PBXGroup;
 			children = (
-				014E4312241B193C003C2100 /* pbzx */,
+				0153DA27241C5BFF00C01ACA /* pbzx */,
+				0153DA1B241BD82800C01ACA /* installerLIB.sh */,
+				0153DA1F241BE06300C01ACA /* InstallerValidation.sh */,
+				0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */,
+				0153DA21241C52FB00C01ACA /* CPCheck.sh */,
+				0153DA23241C540E00C01ACA /* CPCheck2.sh */,
 			);
-			path = InstallerDownload;
+			path = Shell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0153DA1C241BD82800C01ACA /* installerLIB.sh in Resources */,
-				014E4313241B193C003C2100 /* pbzx in Resources */,
+				0153DA28241C5BFF00C01ACA /* pbzx in Resources */,
 				0153DA24241C540E00C01ACA /* CPCheck2.sh in Resources */,
 				0153DA20241BE06300C01ACA /* InstallerValidation.sh in Resources */,
 				013DF76E24191D7C00BFBD17 /* Assets.xcassets in Resources */,
