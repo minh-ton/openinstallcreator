@@ -13,10 +13,16 @@
 		013DF77124191D7C00BFBD17 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013DF76F24191D7C00BFBD17 /* MainMenu.xib */; };
 		013DF77424191D7C00BFBD17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DF77324191D7C00BFBD17 /* main.m */; };
 		013DF7A42419D9AC00BFBD17 /* Picture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 013DF7A22419D9AC00BFBD17 /* Picture1.png */; };
+		014E4313241B193C003C2100 /* pbzx in Resources */ = {isa = PBXBuildFile; fileRef = 014E4312241B193C003C2100 /* pbzx */; };
+		0153DA1C241BD82800C01ACA /* installerLIB.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1B241BD82800C01ACA /* installerLIB.sh */; };
+		0153DA1E241BDF7B00C01ACA /* volumeLIB.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */; };
+		0153DA20241BE06300C01ACA /* InstallerValidation.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1F241BE06300C01ACA /* InstallerValidation.sh */; };
+		0153DA22241C52FB00C01ACA /* CPCheck.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA21241C52FB00C01ACA /* CPCheck.sh */; };
+		0153DA24241C540E00C01ACA /* CPCheck2.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA23241C540E00C01ACA /* CPCheck2.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		013DF76524191D7800BFBD17 /* CreateInstallMedia Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CreateInstallMedia Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		013DF76524191D7800BFBD17 /* CreateInstallMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreateInstallMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013DF76824191D7800BFBD17 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		013DF76B24191D7800BFBD17 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
 		013DF76D24191D7C00BFBD17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -24,6 +30,12 @@
 		013DF77224191D7C00BFBD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013DF77324191D7C00BFBD17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		013DF7A22419D9AC00BFBD17 /* Picture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture1.png; sourceTree = "<group>"; };
+		014E4312241B193C003C2100 /* pbzx */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = pbzx; path = "../New Group/pbzx"; sourceTree = "<group>"; };
+		0153DA1B241BD82800C01ACA /* installerLIB.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = installerLIB.sh; sourceTree = "<group>"; };
+		0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = volumeLIB.sh; sourceTree = "<group>"; };
+		0153DA1F241BE06300C01ACA /* InstallerValidation.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = InstallerValidation.sh; sourceTree = "<group>"; };
+		0153DA21241C52FB00C01ACA /* CPCheck.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CPCheck.sh; sourceTree = "<group>"; };
+		0153DA23241C540E00C01ACA /* CPCheck2.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CPCheck2.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,13 +57,19 @@
 				013DF76724191D7800BFBD17 /* Frameworks */,
 				013DF76624191D7800BFBD17 /* Products */,
 				013DF7A22419D9AC00BFBD17 /* Picture1.png */,
+				0153DA1B241BD82800C01ACA /* installerLIB.sh */,
+				0153DA1F241BE06300C01ACA /* InstallerValidation.sh */,
+				0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */,
+				0153DA21241C52FB00C01ACA /* CPCheck.sh */,
+				0153DA23241C540E00C01ACA /* CPCheck2.sh */,
+				014E4314241B194E003C2100 /* InstallerDownload */,
 			);
 			sourceTree = "<group>";
 		};
 		013DF76624191D7800BFBD17 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				013DF76524191D7800BFBD17 /* CreateInstallMedia Beta.app */,
+				013DF76524191D7800BFBD17 /* CreateInstallMedia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,12 +94,20 @@
 			path = CreateInstallMedia;
 			sourceTree = "<group>";
 		};
+		014E4314241B194E003C2100 /* InstallerDownload */ = {
+			isa = PBXGroup;
+			children = (
+				014E4312241B193C003C2100 /* pbzx */,
+			);
+			path = InstallerDownload;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		013DF76424191D7800BFBD17 /* CreateInstallMedia Beta */ = {
+		013DF76424191D7800BFBD17 /* CreateInstallMedia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 013DF77724191D7C00BFBD17 /* Build configuration list for PBXNativeTarget "CreateInstallMedia Beta" */;
+			buildConfigurationList = 013DF77724191D7C00BFBD17 /* Build configuration list for PBXNativeTarget "CreateInstallMedia" */;
 			buildPhases = (
 				013DF76124191D7800BFBD17 /* Sources */,
 				013DF76224191D7800BFBD17 /* Frameworks */,
@@ -91,9 +117,9 @@
 			);
 			dependencies = (
 			);
-			name = "CreateInstallMedia Beta";
+			name = CreateInstallMedia;
 			productName = CreateInstallMedia;
-			productReference = 013DF76524191D7800BFBD17 /* CreateInstallMedia Beta.app */;
+			productReference = 013DF76524191D7800BFBD17 /* CreateInstallMedia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -123,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				013DF76424191D7800BFBD17 /* CreateInstallMedia Beta */,
+				013DF76424191D7800BFBD17 /* CreateInstallMedia */,
 			);
 		};
 /* End PBXProject section */
@@ -133,8 +159,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0153DA1C241BD82800C01ACA /* installerLIB.sh in Resources */,
+				014E4313241B193C003C2100 /* pbzx in Resources */,
+				0153DA24241C540E00C01ACA /* CPCheck2.sh in Resources */,
+				0153DA20241BE06300C01ACA /* InstallerValidation.sh in Resources */,
 				013DF76E24191D7C00BFBD17 /* Assets.xcassets in Resources */,
+				0153DA22241C52FB00C01ACA /* CPCheck.sh in Resources */,
 				013DF7A42419D9AC00BFBD17 /* Picture1.png in Resources */,
+				0153DA1E241BDF7B00C01ACA /* volumeLIB.sh in Resources */,
 				013DF77124191D7C00BFBD17 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		013DF77724191D7C00BFBD17 /* Build configuration list for PBXNativeTarget "CreateInstallMedia Beta" */ = {
+		013DF77724191D7C00BFBD17 /* Build configuration list for PBXNativeTarget "CreateInstallMedia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				013DF77824191D7C00BFBD17 /* Debug */,

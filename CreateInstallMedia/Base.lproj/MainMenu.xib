@@ -138,7 +138,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="BCK-yh-GeQ">
-                        <rect key="frame" x="122" y="315" width="157" height="17"/>
+                        <rect key="frame" x="122" y="320" width="157" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Select the target volume:" id="vYE-Bg-7qT">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -147,13 +147,20 @@
                         </textFieldCell>
                     </textField>
                     <popUpButton verticalHuggingPriority="750" id="gF6-oa-dG6">
-                        <rect key="frame" x="100" y="283" width="199" height="25"/>
+                        <rect key="frame" x="100" y="288" width="199" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="WQN-KA-KKX">
+                        <popUpButtonCell key="cell" type="push" title="- Select a volume -" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="7xn-T7-TbB" id="WQN-KA-KKX">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="T8V-Zo-QGa"/>
+                            <menu key="menu" id="T8V-Zo-QGa">
+                                <items>
+                                    <menuItem title="- Select a volume -" state="on" id="7xn-T7-TbB" userLabel="Select a volume"/>
+                                </items>
+                            </menu>
                         </popUpButtonCell>
+                        <connections>
+                            <action selector="selectVolumePopUpClicked:" target="Voe-Tx-rLC" id="XRG-Hw-ldA"/>
+                        </connections>
                     </popUpButton>
                     <progressIndicator wantsLayer="YES" maxValue="100" style="bar" id="mur-2X-4x8">
                         <rect key="frame" x="39" y="49" width="321" height="20"/>
@@ -169,7 +176,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="vAz-gO-VHO">
-                        <rect key="frame" x="47" y="198" width="305" height="20"/>
+                        <rect key="frame" x="47" y="203" width="305" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Create patched installer for unsupported Macs" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xTV-nj-Hss">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -183,9 +190,12 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="ContinueClicked:" target="Voe-Tx-rLC" id="UJd-Zp-TCj"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="KlT-Hy-oTg">
-                        <rect key="frame" x="66" y="234" width="267" height="32"/>
+                        <rect key="frame" x="66" y="239" width="267" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="square" title="Browse for a macOS Installer (10.5 - 10.15)" bezelStyle="shadowlessSquare" imagePosition="left" borderStyle="border" inset="2" id="I2N-9t-Dxm">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -196,11 +206,11 @@
                         </connections>
                     </button>
                     <box verticalHuggingPriority="750" boxType="separator" id="bjQ-hJ-fvp">
-                        <rect key="frame" x="53" y="180" width="297" height="5"/>
+                        <rect key="frame" x="53" y="185" width="297" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="GH9-hw-ZcO">
-                        <rect key="frame" x="18" y="97" width="364" height="77"/>
+                        <rect key="frame" x="18" y="102" width="364" height="77"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" selectable="YES" alignment="center" title="%@" id="gJs-eT-4Ru">
                             <font key="font" metaFont="system"/>
