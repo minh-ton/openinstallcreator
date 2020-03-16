@@ -195,9 +195,9 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="KlT-Hy-oTg">
-                        <rect key="frame" x="66" y="239" width="267" height="32"/>
+                        <rect key="frame" x="66" y="239" width="273" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="Browse for a macOS Installer (10.5 - 10.15)" bezelStyle="shadowlessSquare" imagePosition="left" borderStyle="border" inset="2" id="I2N-9t-Dxm">
+                        <buttonCell key="cell" type="square" title="Browse for a macOS Installer (10.10 - 10.15)" bezelStyle="shadowlessSquare" imagePosition="left" borderStyle="border" inset="2" id="I2N-9t-Dxm">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>

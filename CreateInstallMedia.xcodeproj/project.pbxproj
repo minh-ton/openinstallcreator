@@ -14,10 +14,29 @@
 		013DF77424191D7C00BFBD17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DF77324191D7C00BFBD17 /* main.m */; };
 		0153DA1C241BD82800C01ACA /* installerLIB.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1B241BD82800C01ACA /* installerLIB.sh */; };
 		0153DA1E241BDF7B00C01ACA /* volumeLIB.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */; };
-		0153DA20241BE06300C01ACA /* InstallerValidation.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA1F241BE06300C01ACA /* InstallerValidation.sh */; };
 		0153DA22241C52FB00C01ACA /* CPCheck.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA21241C52FB00C01ACA /* CPCheck.sh */; };
 		0153DA24241C540E00C01ACA /* CPCheck2.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA23241C540E00C01ACA /* CPCheck2.sh */; };
 		0153DA28241C5BFF00C01ACA /* pbzx in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA27241C5BFF00C01ACA /* pbzx */; };
+		0153DA2B241CC1EB00C01ACA /* strcCheck.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA2A241CC1EB00C01ACA /* strcCheck.sh */; };
+		0153DA2E241CF65C00C01ACA /* Yosemite.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA2D241CF65C00C01ACA /* Yosemite.sh */; };
+		0153DA30241CF67F00C01ACA /* ElCapitan.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA2F241CF67F00C01ACA /* ElCapitan.sh */; };
+		0153DA32241CF69000C01ACA /* Sierra.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA31241CF69000C01ACA /* Sierra.sh */; };
+		0153DA34241CF6A200C01ACA /* HighSierra.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA33241CF6A200C01ACA /* HighSierra.sh */; };
+		0153DA36241CF6B800C01ACA /* Mojave.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA35241CF6B800C01ACA /* Mojave.sh */; };
+		0153DA38241CF6C400C01ACA /* Catalina.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA37241CF6C400C01ACA /* Catalina.sh */; };
+		0153DA3C241D0EBF00C01ACA /* Yosemite.com.apple.Boot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA3B241D0EBF00C01ACA /* Yosemite.com.apple.Boot.plist */; };
+		0153DA3E241D1AD400C01ACA /* ElCapitan.com.apple.Boot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA3D241D1AD400C01ACA /* ElCapitan.com.apple.Boot.plist */; };
+		0153DA40241D1C7300C01ACA /* Sierra.com.apple.Boot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA3F241D1C7300C01ACA /* Sierra.com.apple.Boot.plist */; };
+		0153DA42241D219700C01ACA /* HighSierra.com.apple.Boot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA41241D219600C01ACA /* HighSierra.com.apple.Boot.plist */; };
+		0153DA44241D261B00C01ACA /* Mojave.com.apple.Boot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA43241D261B00C01ACA /* Mojave.com.apple.Boot.plist */; };
+		0153DA46241D264700C01ACA /* Catalina.com.apple.Boot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA45241D264700C01ACA /* Catalina.com.apple.Boot.plist */; };
+		0153DA49241DAFAE00C01ACA /* MojaveIAPhysicalMedia in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA48241DAFAE00C01ACA /* MojaveIAPhysicalMedia */; };
+		0153DA4B241DAFCB00C01ACA /* CatalinaIAPhysicalMedia in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA4A241DAFCB00C01ACA /* CatalinaIAPhysicalMedia */; };
+		0153DA4D241DB03100C01ACA /* HighSierraIAPhysicalMedia in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA4C241DB03000C01ACA /* HighSierraIAPhysicalMedia */; };
+		0153DA4F241DB0BE00C01ACA /* SierraIAPhysicalMedia in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA4E241DB0BE00C01ACA /* SierraIAPhysicalMedia */; };
+		0153DA51241DB0EC00C01ACA /* ElCapitanIAPhysicalMedia in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA50241DB0EC00C01ACA /* ElCapitanIAPhysicalMedia */; };
+		0153DA53241DB10400C01ACA /* YosemiteIAPhysicalMedia in Resources */ = {isa = PBXBuildFile; fileRef = 0153DA52241DB10300C01ACA /* YosemiteIAPhysicalMedia */; };
+		01EC27E4241E3CF7007AE522 /* Volname.sh in Resources */ = {isa = PBXBuildFile; fileRef = 01EC27E3241E3CF7007AE522 /* Volname.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +49,29 @@
 		013DF77324191D7C00BFBD17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0153DA1B241BD82800C01ACA /* installerLIB.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = installerLIB.sh; sourceTree = "<group>"; };
 		0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = volumeLIB.sh; sourceTree = "<group>"; };
-		0153DA1F241BE06300C01ACA /* InstallerValidation.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = InstallerValidation.sh; sourceTree = "<group>"; };
 		0153DA21241C52FB00C01ACA /* CPCheck.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CPCheck.sh; sourceTree = "<group>"; };
 		0153DA23241C540E00C01ACA /* CPCheck2.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CPCheck2.sh; sourceTree = "<group>"; };
 		0153DA27241C5BFF00C01ACA /* pbzx */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = pbzx; sourceTree = "<group>"; };
+		0153DA2A241CC1EB00C01ACA /* strcCheck.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = strcCheck.sh; sourceTree = "<group>"; };
+		0153DA2D241CF65C00C01ACA /* Yosemite.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Yosemite.sh; sourceTree = "<group>"; };
+		0153DA2F241CF67F00C01ACA /* ElCapitan.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ElCapitan.sh; sourceTree = "<group>"; };
+		0153DA31241CF69000C01ACA /* Sierra.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Sierra.sh; sourceTree = "<group>"; };
+		0153DA33241CF6A200C01ACA /* HighSierra.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = HighSierra.sh; sourceTree = "<group>"; };
+		0153DA35241CF6B800C01ACA /* Mojave.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Mojave.sh; sourceTree = "<group>"; };
+		0153DA37241CF6C400C01ACA /* Catalina.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Catalina.sh; sourceTree = "<group>"; };
+		0153DA3B241D0EBF00C01ACA /* Yosemite.com.apple.Boot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Yosemite.com.apple.Boot.plist; sourceTree = "<group>"; };
+		0153DA3D241D1AD400C01ACA /* ElCapitan.com.apple.Boot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ElCapitan.com.apple.Boot.plist; sourceTree = "<group>"; };
+		0153DA3F241D1C7300C01ACA /* Sierra.com.apple.Boot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Sierra.com.apple.Boot.plist; sourceTree = "<group>"; };
+		0153DA41241D219600C01ACA /* HighSierra.com.apple.Boot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HighSierra.com.apple.Boot.plist; sourceTree = "<group>"; };
+		0153DA43241D261B00C01ACA /* Mojave.com.apple.Boot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mojave.com.apple.Boot.plist; sourceTree = "<group>"; };
+		0153DA45241D264700C01ACA /* Catalina.com.apple.Boot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Catalina.com.apple.Boot.plist; sourceTree = "<group>"; };
+		0153DA48241DAFAE00C01ACA /* MojaveIAPhysicalMedia */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MojaveIAPhysicalMedia; sourceTree = "<group>"; };
+		0153DA4A241DAFCB00C01ACA /* CatalinaIAPhysicalMedia */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CatalinaIAPhysicalMedia; sourceTree = "<group>"; };
+		0153DA4C241DB03000C01ACA /* HighSierraIAPhysicalMedia */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HighSierraIAPhysicalMedia; sourceTree = "<group>"; };
+		0153DA4E241DB0BE00C01ACA /* SierraIAPhysicalMedia */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SierraIAPhysicalMedia; sourceTree = "<group>"; };
+		0153DA50241DB0EC00C01ACA /* ElCapitanIAPhysicalMedia */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ElCapitanIAPhysicalMedia; sourceTree = "<group>"; };
+		0153DA52241DB10300C01ACA /* YosemiteIAPhysicalMedia */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = YosemiteIAPhysicalMedia; sourceTree = "<group>"; };
+		01EC27E3241E3CF7007AE522 /* Volname.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = Volname.sh; path = Shell/Volname.sh; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +92,9 @@
 				013DF76A24191D7800BFBD17 /* CreateInstallMedia */,
 				013DF76724191D7800BFBD17 /* Frameworks */,
 				013DF76624191D7800BFBD17 /* Products */,
+				0153DA39241D0C6000C01ACA /* Boot Files */,
+				0153DA2C241CF5E700C01ACA /* OSnameSH */,
+				0153DA47241DAF9300C01ACA /* IAPhysicalMedia */,
 				0153DA29241C5C0800C01ACA /* Shell */,
 			);
 			sourceTree = "<group>";
@@ -91,12 +132,52 @@
 			children = (
 				0153DA27241C5BFF00C01ACA /* pbzx */,
 				0153DA1B241BD82800C01ACA /* installerLIB.sh */,
-				0153DA1F241BE06300C01ACA /* InstallerValidation.sh */,
 				0153DA1D241BDF7B00C01ACA /* volumeLIB.sh */,
 				0153DA21241C52FB00C01ACA /* CPCheck.sh */,
 				0153DA23241C540E00C01ACA /* CPCheck2.sh */,
+				0153DA2A241CC1EB00C01ACA /* strcCheck.sh */,
+				01EC27E3241E3CF7007AE522 /* Volname.sh */,
 			);
 			path = Shell;
+			sourceTree = "<group>";
+		};
+		0153DA2C241CF5E700C01ACA /* OSnameSH */ = {
+			isa = PBXGroup;
+			children = (
+				0153DA2F241CF67F00C01ACA /* ElCapitan.sh */,
+				0153DA31241CF69000C01ACA /* Sierra.sh */,
+				0153DA33241CF6A200C01ACA /* HighSierra.sh */,
+				0153DA35241CF6B800C01ACA /* Mojave.sh */,
+				0153DA37241CF6C400C01ACA /* Catalina.sh */,
+				0153DA2D241CF65C00C01ACA /* Yosemite.sh */,
+			);
+			path = OSnameSH;
+			sourceTree = "<group>";
+		};
+		0153DA39241D0C6000C01ACA /* Boot Files */ = {
+			isa = PBXGroup;
+			children = (
+				0153DA3B241D0EBF00C01ACA /* Yosemite.com.apple.Boot.plist */,
+				0153DA3D241D1AD400C01ACA /* ElCapitan.com.apple.Boot.plist */,
+				0153DA3F241D1C7300C01ACA /* Sierra.com.apple.Boot.plist */,
+				0153DA41241D219600C01ACA /* HighSierra.com.apple.Boot.plist */,
+				0153DA43241D261B00C01ACA /* Mojave.com.apple.Boot.plist */,
+				0153DA45241D264700C01ACA /* Catalina.com.apple.Boot.plist */,
+			);
+			path = "Boot Files";
+			sourceTree = "<group>";
+		};
+		0153DA47241DAF9300C01ACA /* IAPhysicalMedia */ = {
+			isa = PBXGroup;
+			children = (
+				0153DA4C241DB03000C01ACA /* HighSierraIAPhysicalMedia */,
+				0153DA4E241DB0BE00C01ACA /* SierraIAPhysicalMedia */,
+				0153DA48241DAFAE00C01ACA /* MojaveIAPhysicalMedia */,
+				0153DA4A241DAFCB00C01ACA /* CatalinaIAPhysicalMedia */,
+				0153DA50241DB0EC00C01ACA /* ElCapitanIAPhysicalMedia */,
+				0153DA52241DB10300C01ACA /* YosemiteIAPhysicalMedia */,
+			);
+			path = IAPhysicalMedia;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,13 +238,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				0153DA1C241BD82800C01ACA /* installerLIB.sh in Resources */,
+				0153DA38241CF6C400C01ACA /* Catalina.sh in Resources */,
+				0153DA4F241DB0BE00C01ACA /* SierraIAPhysicalMedia in Resources */,
 				0153DA28241C5BFF00C01ACA /* pbzx in Resources */,
 				0153DA24241C540E00C01ACA /* CPCheck2.sh in Resources */,
-				0153DA20241BE06300C01ACA /* InstallerValidation.sh in Resources */,
+				0153DA51241DB0EC00C01ACA /* ElCapitanIAPhysicalMedia in Resources */,
 				013DF76E24191D7C00BFBD17 /* Assets.xcassets in Resources */,
+				0153DA4D241DB03100C01ACA /* HighSierraIAPhysicalMedia in Resources */,
+				01EC27E4241E3CF7007AE522 /* Volname.sh in Resources */,
+				0153DA49241DAFAE00C01ACA /* MojaveIAPhysicalMedia in Resources */,
+				0153DA34241CF6A200C01ACA /* HighSierra.sh in Resources */,
+				0153DA42241D219700C01ACA /* HighSierra.com.apple.Boot.plist in Resources */,
+				0153DA32241CF69000C01ACA /* Sierra.sh in Resources */,
+				0153DA30241CF67F00C01ACA /* ElCapitan.sh in Resources */,
+				0153DA3E241D1AD400C01ACA /* ElCapitan.com.apple.Boot.plist in Resources */,
+				0153DA3C241D0EBF00C01ACA /* Yosemite.com.apple.Boot.plist in Resources */,
+				0153DA46241D264700C01ACA /* Catalina.com.apple.Boot.plist in Resources */,
+				0153DA4B241DAFCB00C01ACA /* CatalinaIAPhysicalMedia in Resources */,
+				0153DA53241DB10400C01ACA /* YosemiteIAPhysicalMedia in Resources */,
+				0153DA44241D261B00C01ACA /* Mojave.com.apple.Boot.plist in Resources */,
 				0153DA22241C52FB00C01ACA /* CPCheck.sh in Resources */,
+				0153DA2E241CF65C00C01ACA /* Yosemite.sh in Resources */,
+				0153DA40241D1C7300C01ACA /* Sierra.com.apple.Boot.plist in Resources */,
 				0153DA1E241BDF7B00C01ACA /* volumeLIB.sh in Resources */,
+				0153DA36241CF6B800C01ACA /* Mojave.sh in Resources */,
 				013DF77124191D7C00BFBD17 /* MainMenu.xib in Resources */,
+				0153DA2B241CC1EB00C01ACA /* strcCheck.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
