@@ -16,11 +16,16 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="CreatePatchedInstallerTick" destination="vAz-gO-VHO" id="iUw-6s-ouR"/>
+                <outlet property="InstallerNotSelected" destination="kVW-Mt-pEz" id="iun-sn-8Xa"/>
+                <outlet property="InstallerSelected" destination="N36-3Z-5CC" id="D43-ZO-IK5"/>
                 <outlet property="SelectInstallerButton" destination="KlT-Hy-oTg" id="IOg-Hx-uix"/>
                 <outlet property="SelectVolumePopUp" destination="gF6-oa-dG6" id="6dF-BC-csb"/>
+                <outlet property="VolumeNotSelected" destination="u41-JI-3Et" id="6rD-KZ-jin"/>
+                <outlet property="VolumeSelected" destination="R8b-Eq-YY8" id="427-ht-zXD"/>
                 <outlet property="progressBar" destination="mur-2X-4x8" id="BKy-q9-g3O"/>
                 <outlet property="progressContinueButton" destination="T7j-Ii-cLO" id="hWW-fT-xDF"/>
                 <outlet property="progressLabel" destination="mzC-I8-3gh" id="Utp-om-gIw"/>
+                <outlet property="refreshButton" destination="kuO-qb-IwF" id="VyG-Za-Dvq"/>
                 <outlet property="statusText" destination="GH9-hw-ZcO" id="BQt-CZ-rNu"/>
                 <outlet property="theWindow" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -218,9 +223,45 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="R8b-Eq-YY8">
+                        <rect key="frame" x="285" y="278" width="48" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="VJo-MH-ifq"/>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="N36-3Z-5CC">
+                        <rect key="frame" x="331" y="229" width="48" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="r8y-C6-RqS"/>
+                    </imageView>
+                    <button id="kuO-qb-IwF">
+                        <rect key="frame" x="77" y="293" width="24" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRefreshTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vW1-Qy-bx8">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="refreshClicked:" target="Voe-Tx-rLC" id="x0M-3Y-eYI"/>
+                        </connections>
+                    </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="u41-JI-3Et">
+                        <rect key="frame" x="285" y="278" width="48" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="9j5-62-TYl"/>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kVW-Mt-pEz">
+                        <rect key="frame" x="331" y="229" width="48" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="eWR-MT-f8d"/>
+                    </imageView>
                 </subviews>
             </view>
             <point key="canvasLocation" x="140" y="54"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
+        <image name="NSStatusAvailable" width="16" height="16"/>
+        <image name="NSStatusUnavailable" width="16" height="16"/>
+    </resources>
 </document>

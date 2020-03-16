@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateInstallMedia/AppDelegate.applescript"
-            timestampString = "605964712.683816"
+            timestampString = "606060171.009997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "on ContinueClicked_(sender)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateInstallMedia/AppDelegate.applescript"
-            timestampString = "605964712.684459"
+            timestampString = "606060171.010684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "on selectVolumePopUpClicked_(sender)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateInstallMedia/AppDelegate.applescript"
-            timestampString = "605964712.684921"
+            timestampString = "606060171.0111459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "on browseInstaller_(sender)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateInstallMedia/AppDelegate.applescript"
-            timestampString = "605964712.685377"
+            timestampString = "606060171.011598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "on downloadInstallerMenuClicked_(sender)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateInstallMedia/AppDelegate.applescript"
-            timestampString = "605964712.685827"
+            timestampString = "606060814.4046839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateInstallMedia/AppDelegate.applescript"
-            timestampString = "605964712.686276"
+            timestampString = "606060842.143707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "on Create_Normal_Install_Media()"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
+            landmarkName = "on applicationWillFinishLaunching_(aNotification)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateInstallMedia/AppDelegate.applescript"
-            timestampString = "605964712.686722"
+            timestampString = "606060843.845732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "on Create_Normal_Install_Media()"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
+            landmarkName = "on applicationShouldTerminate_(sender)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateInstallMedia/AppDelegate.applescript"
-            timestampString = "605964712.687165"
+            timestampString = "606060845.337392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "on Create_Normal_Install_Media()"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
+            landmarkName = "on applicationShouldTerminateAfterLastWindowClosed_(sender)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
