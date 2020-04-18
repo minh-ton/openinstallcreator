@@ -1,2 +1,2 @@
 # openinstallcreator
-Allows you to make a bootable macOS/OS X Installer or a patched Installer for use on unsupported Macs.
+An open-source software allows you to make a bootable macOS/OS X Installer... and more.
