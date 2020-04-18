@@ -11,7 +11,6 @@
 		0160047E244ABF7D0025D2BB /* createinstallfiles.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0160047D244ABF7D0025D2BB /* createinstallfiles.sh */; };
 		0169CE702449A35400B68E67 /* booticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE6F2449A35400B68E67 /* booticon.png */; };
 		0169CE722449AC0800B68E67 /* openinstallercreatorflags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */; };
-		0169CE762449DF7700B68E67 /* normalbootableinstaller.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE752449DF7700B68E67 /* normalbootableinstaller.sh */; };
 		01F7D9F124361C5800729EE0 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7D9F024361C5800729EE0 /* AppleScriptObjC.framework */; };
 		01F7D9F424361C5800729EE0 /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D9F324361C5800729EE0 /* AppDelegate.applescript */; };
 		01F7D9F624361C5C00729EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F7D9F524361C5C00729EE0 /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 		0160047D244ABF7D0025D2BB /* createinstallfiles.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = createinstallfiles.sh; sourceTree = "<group>"; };
 		0169CE6F2449A35400B68E67 /* booticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = booticon.png; sourceTree = "<group>"; };
 		0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = openinstallercreatorflags.plist; sourceTree = "<group>"; };
-		0169CE752449DF7700B68E67 /* normalbootableinstaller.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = normalbootableinstaller.sh; sourceTree = "<group>"; };
 		01F7D9ED24361C5800729EE0 /* openinstallcreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openinstallcreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F7D9F024361C5800729EE0 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		01F7D9F324361C5800729EE0 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
@@ -54,21 +52,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01F7D9E424361C5800729EE0 = {
+		01770E4E244AE56A003C924C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01F7D9F224361C5800729EE0 /* openinstallcreator */,
-				01F7D9EF24361C5800729EE0 /* Frameworks */,
-				01F7D9EE24361C5800729EE0 /* Products */,
 				01F7DA06243630DD00729EE0 /* arrowbutton.tiff */,
 				01F7DA08243630F300729EE0 /* cancel.tiff */,
 				01F7DA0A243630FF00729EE0 /* restart.tiff */,
 				01F7DA0C243631EC00729EE0 /* Installer.png */,
 				014D8E6F243867C000CDFC20 /* elcapitan.tiff */,
 				0169CE6F2449A35400B68E67 /* booticon.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		01F7D9E424361C5800729EE0 = {
+			isa = PBXGroup;
+			children = (
+				01F7D9F224361C5800729EE0 /* openinstallcreator */,
+				01F7D9EF24361C5800729EE0 /* Frameworks */,
+				01F7D9EE24361C5800729EE0 /* Products */,
+				01770E4E244AE56A003C924C /* Resources */,
 				0160047D244ABF7D0025D2BB /* createinstallfiles.sh */,
 				0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */,
-				0169CE752449DF7700B68E67 /* normalbootableinstaller.sh */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,7 +163,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01F7DA0B243630FF00729EE0 /* restart.tiff in Resources */,
-				0169CE762449DF7700B68E67 /* normalbootableinstaller.sh in Resources */,
 				014D8E70243867C000CDFC20 /* elcapitan.tiff in Resources */,
 				0169CE702449A35400B68E67 /* booticon.png in Resources */,
 				0169CE722449AC0800B68E67 /* openinstallercreatorflags.plist in Resources */,

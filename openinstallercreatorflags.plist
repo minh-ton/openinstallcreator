@@ -6,21 +6,9 @@
 	<string></string>
 	<key>InstallerPath</key>
 	<string></string>
-	<key>installer_version_short</key>
-	<string></string>
-	<key>installer_app_name</key>
-	<string></string>
-	<key>installer_volume_path</key>
-	<string></string>
 	<key>CheckStructure</key>
 	<string>if [[ -e /tmp/InstallESD/BaseSystem.dmg ]]; then echo &quot;tmp&quot;; fi</string>
 	<key>CheckDiskSize</key>
 	<string>| awk &apos;{printf(&quot;%s\n&quot;, $2)}&apos; | awk NR\&gt;1 | rev | cut -c 2- | rev</string>
-	<key>hash</key>
-	<string>#</string>
-	<key>asterisk</key>
-	<string>*</string>
-	<key>percent</key>
-	<string>%</string>
 </dict>
 </plist>
