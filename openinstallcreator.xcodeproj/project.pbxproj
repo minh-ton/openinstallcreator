@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		014D8E70243867C000CDFC20 /* elcapitan.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 014D8E6F243867C000CDFC20 /* elcapitan.tiff */; };
+		0160047E244ABF7D0025D2BB /* createinstallfiles.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0160047D244ABF7D0025D2BB /* createinstallfiles.sh */; };
+		0169CE702449A35400B68E67 /* booticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE6F2449A35400B68E67 /* booticon.png */; };
+		0169CE722449AC0800B68E67 /* openinstallercreatorflags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */; };
+		0169CE762449DF7700B68E67 /* normalbootableinstaller.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE752449DF7700B68E67 /* normalbootableinstaller.sh */; };
+		01F7D9F124361C5800729EE0 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7D9F024361C5800729EE0 /* AppleScriptObjC.framework */; };
+		01F7D9F424361C5800729EE0 /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D9F324361C5800729EE0 /* AppDelegate.applescript */; };
+		01F7D9F624361C5C00729EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F7D9F524361C5C00729EE0 /* Assets.xcassets */; };
+		01F7D9F924361C5C00729EE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F7D9F724361C5C00729EE0 /* MainMenu.xib */; };
+		01F7D9FC24361C5C00729EE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D9FB24361C5C00729EE0 /* main.m */; };
+		01F7DA07243630DD00729EE0 /* arrowbutton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 01F7DA06243630DD00729EE0 /* arrowbutton.tiff */; };
+		01F7DA09243630F300729EE0 /* cancel.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 01F7DA08243630F300729EE0 /* cancel.tiff */; };
+		01F7DA0B243630FF00729EE0 /* restart.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 01F7DA0A243630FF00729EE0 /* restart.tiff */; };
+		01F7DA0D243631EC00729EE0 /* Installer.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F7DA0C243631EC00729EE0 /* Installer.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		014D8E6F243867C000CDFC20 /* elcapitan.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = elcapitan.tiff; sourceTree = "<group>"; };
+		0160047D244ABF7D0025D2BB /* createinstallfiles.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = createinstallfiles.sh; sourceTree = "<group>"; };
+		0169CE6F2449A35400B68E67 /* booticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = booticon.png; sourceTree = "<group>"; };
+		0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = openinstallercreatorflags.plist; sourceTree = "<group>"; };
+		0169CE752449DF7700B68E67 /* normalbootableinstaller.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = normalbootableinstaller.sh; sourceTree = "<group>"; };
+		01F7D9ED24361C5800729EE0 /* openinstallcreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openinstallcreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01F7D9F024361C5800729EE0 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
+		01F7D9F324361C5800729EE0 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
+		01F7D9F524361C5C00729EE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01F7D9FA24361C5C00729EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01F7D9FB24361C5C00729EE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		01F7DA05243628C600729EE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		01F7DA06243630DD00729EE0 /* arrowbutton.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowbutton.tiff; sourceTree = "<group>"; };
+		01F7DA08243630F300729EE0 /* cancel.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = cancel.tiff; sourceTree = "<group>"; };
+		01F7DA0A243630FF00729EE0 /* restart.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = restart.tiff; sourceTree = "<group>"; };
+		01F7DA0C243631EC00729EE0 /* Installer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Installer.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01F7D9EA24361C5800729EE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F7D9F124361C5800729EE0 /* AppleScriptObjC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01F7D9E424361C5800729EE0 = {
+			isa = PBXGroup;
+			children = (
+				01F7D9F224361C5800729EE0 /* openinstallcreator */,
+				01F7D9EF24361C5800729EE0 /* Frameworks */,
+				01F7D9EE24361C5800729EE0 /* Products */,
+				01F7DA06243630DD00729EE0 /* arrowbutton.tiff */,
+				01F7DA08243630F300729EE0 /* cancel.tiff */,
+				01F7DA0A243630FF00729EE0 /* restart.tiff */,
+				01F7DA0C243631EC00729EE0 /* Installer.png */,
+				014D8E6F243867C000CDFC20 /* elcapitan.tiff */,
+				0169CE6F2449A35400B68E67 /* booticon.png */,
+				0160047D244ABF7D0025D2BB /* createinstallfiles.sh */,
+				0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */,
+				0169CE752449DF7700B68E67 /* normalbootableinstaller.sh */,
+			);
+			sourceTree = "<group>";
+		};
+		01F7D9EE24361C5800729EE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01F7D9ED24361C5800729EE0 /* openinstallcreator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01F7D9EF24361C5800729EE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01F7D9F024361C5800729EE0 /* AppleScriptObjC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		01F7D9F224361C5800729EE0 /* openinstallcreator */ = {
+			isa = PBXGroup;
+			children = (
+				01F7D9F324361C5800729EE0 /* AppDelegate.applescript */,
+				01F7D9F524361C5C00729EE0 /* Assets.xcassets */,
+				01F7D9F724361C5C00729EE0 /* MainMenu.xib */,
+				01F7D9FB24361C5C00729EE0 /* main.m */,
+				01F7D9FA24361C5C00729EE0 /* Info.plist */,
+			);
+			path = openinstallcreator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01F7D9EC24361C5800729EE0 /* openinstallcreator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01F7D9FF24361C5C00729EE0 /* Build configuration list for PBXNativeTarget "openinstallcreator" */;
+			buildPhases = (
+				01F7D9E924361C5800729EE0 /* Sources */,
+				01F7D9EA24361C5800729EE0 /* Frameworks */,
+				01F7D9EB24361C5800729EE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = openinstallcreator;
+			productName = ProMacInstaller;
+			productReference = 01F7D9ED24361C5800729EE0 /* openinstallcreator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01F7D9E524361C5800729EE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = MinhTon;
+				TargetAttributes = {
+					01F7D9EC24361C5800729EE0 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 01F7D9E824361C5800729EE0 /* Build configuration list for PBXProject "openinstallcreator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01F7D9E424361C5800729EE0;
+			productRefGroup = 01F7D9EE24361C5800729EE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01F7D9EC24361C5800729EE0 /* openinstallcreator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01F7D9EB24361C5800729EE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F7DA0B243630FF00729EE0 /* restart.tiff in Resources */,
+				0169CE762449DF7700B68E67 /* normalbootableinstaller.sh in Resources */,
+				014D8E70243867C000CDFC20 /* elcapitan.tiff in Resources */,
+				0169CE702449A35400B68E67 /* booticon.png in Resources */,
+				0169CE722449AC0800B68E67 /* openinstallercreatorflags.plist in Resources */,
+				01F7DA09243630F300729EE0 /* cancel.tiff in Resources */,
+				0160047E244ABF7D0025D2BB /* createinstallfiles.sh in Resources */,
+				01F7DA0D243631EC00729EE0 /* Installer.png in Resources */,
+				01F7D9F624361C5C00729EE0 /* Assets.xcassets in Resources */,
+				01F7DA07243630DD00729EE0 /* arrowbutton.tiff in Resources */,
+				01F7D9F924361C5C00729EE0 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01F7D9E924361C5800729EE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F7D9FC24361C5C00729EE0 /* main.m in Sources */,
+				01F7D9F424361C5800729EE0 /* AppDelegate.applescript in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		01F7D9F724361C5C00729EE0 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01F7DA05243628C600729EE0 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01F7D9FD24361C5C00729EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		01F7D9FE24361C5C00729EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		01F7DA0024361C5C00729EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = openinstallcreater;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NAR5D6HWAD;
+				INFOPLIST_FILE = openinstallcreator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OSACOMPILE_EXECUTE_ONLY = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fordApps.openinstallcreater;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		01F7DA0124361C5C00729EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = openinstallcreater;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NAR5D6HWAD;
+				INFOPLIST_FILE = openinstallcreator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OSACOMPILE_EXECUTE_ONLY = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fordApps.openinstallcreater;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01F7D9E824361C5800729EE0 /* Build configuration list for PBXProject "openinstallcreator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F7D9FD24361C5C00729EE0 /* Debug */,
+				01F7D9FE24361C5C00729EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01F7D9FF24361C5C00729EE0 /* Build configuration list for PBXNativeTarget "openinstallcreator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F7DA0024361C5C00729EE0 /* Debug */,
+				01F7DA0124361C5C00729EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01F7D9E524361C5800729EE0 /* Project object */;
+}

@@ -359,7 +359,7 @@ script AppDelegate
     
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
-        set VolumesList to (get paragraphs of(do shell script "ls /Volumes"))
+        set VolumesList to c(get paragraphs of(do shell script "ls /Volumes"))
         SelectVolumePopUp's addItemsWithTitles_(VolumesList)
         set username to (do shell script "whoami")
         statusText's setStringValue:"Welcome to macOS Installer Creator!" & return & return & "Please make sure that the targeted drive is backed up before being erased to make a bootable macOS Installer."
