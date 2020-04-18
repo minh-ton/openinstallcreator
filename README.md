@@ -1,4 +1,4 @@
-# openinstallcreator beta
+# [openinstallcreator beta](https://github.com/Minh-Ton/openinstallcreator)
 An open-source AppleScriptObj-C application allows you to make a bootable macOS/OS X Installer... and more.
 
 <img src="https://github.com/Minh-Ton/openinstallcreator/raw/master/Resources/imac27.png" width="256"> 
