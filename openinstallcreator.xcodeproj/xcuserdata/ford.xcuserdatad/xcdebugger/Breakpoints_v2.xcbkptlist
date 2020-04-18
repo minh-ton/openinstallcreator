@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "608886757.7390341"
+            timestampString = "608896763.06497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "script AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
