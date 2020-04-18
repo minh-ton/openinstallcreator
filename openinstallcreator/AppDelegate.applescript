@@ -20,7 +20,6 @@ script AppDelegate
     property continueButton0 : missing value
     property continueText0 : missing value
     property statusText0 : missing value
-    property badge0 : missing value
     property readybutton0 : missing value
     
     
@@ -28,16 +27,14 @@ script AppDelegate
                         --  FIRST VIEW  -  NORMAL BOOTABLE INSTALLER --
    
     on SelectVolumePopUp0Clicked_(sender)
-        badge0's setHidden_(true)
         set selectedVolume to selectVolumePopUp0's titleOfSelectedItem() as text
         set selectedVolume to (do shell script "echo " & selectedVolume & "| sed 's/ /\\\\ /g'")
-        set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallercreatorflags.plist"
         -- set VolumeSizeCheck to (do shell script "defaults read " & flagspath & " CheckDiskSize")
         -- set VolumeSize to (do shell script "df -H /Volumes/" & (selectVolumePopUp0's titleOfSelectedItem() as text) & " | awk '{printf(" & (quoted form of "%s\n") & ", $2)}' | awk NR\\>1 | rev | cut -c 2- | rev")
         -- display dialog VolumeSize
         -- if VolumeSize >= "10" then
         do shell script "defaults write " & flagspath & " SelectedVolume " & selectedVolume
-        badge0's setHidden_(false)
         -- else if VolumeSize < "10" then
         --     display alert "The selected Volume cannot be used to create a bootable installer." message "Please choose a volume at least 10GB or larger." & return & "(Error code: 1)"
         -- end if
@@ -49,7 +46,7 @@ script AppDelegate
         statusText0's setStringValue:"Now, please select the I'm ready button to continue."
         set InstallerPath to (do shell script "echo " & InstallerPath & "| sed 's/ /\\\\ /g'")
         
-        set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallercreatorflags.plist"
         do shell script "defaults write " & flagspath & " InstallerPath " & InstallerPath
         
         set valid to (do shell script "defaults read " & InstallerPath & "Contents/Info.plist CFBundleIconFile")
@@ -60,7 +57,7 @@ script AppDelegate
     end selectInstallerButton0Clicked_
     
     on readybutton0Clicked_(sender)
-        set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallercreatorflags.plist"
         set InstallerPath to (do shell script "defaults read " & flagspath & " InstallerPath")
         if InstallerPath = "unavailable" then
             display alert "Installer Unavailable for Creation Process." message "Oops... Seems like you forgot to choose an Installer." & return & "(Error code: 3)"
@@ -74,7 +71,7 @@ script AppDelegate
     end readybutton0Clicked_
     
     on continueButton0Clicked_(sender)
-        set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallercreatorflags.plist"
         set InstallerPath to (do shell script "defaults read " & flagspath & " InstallerPath")
         set OriginalInstallerPath to InstallerPath
         set InstallerPath to (do shell script "echo " & InstallerPath & "| sed 's/ /\\\\ /g' | rev | cut -c 2- | rev")
@@ -278,6 +275,8 @@ script AppDelegate
         set selectedVolume to quoted form of selectedVolume
         
         set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/openinstallercreatorflags.plist"
+        do shell script "cp " & flagspath & " /tmp"
+        set flagspath to "/tmp/openinstallercreatorflags.plist"
         set selectedVolume to (do shell script "echo " & selectedVolume & "| sed 's/ /\\\\ /g'")
         do shell script "defaults write " & flagspath & " SelectedVolume " & selectedVolume
         set InstallerPath to "unavailable"
@@ -285,11 +284,11 @@ script AppDelegate
         
         progressText0's setHidden_(true)
         continueButton0's setEnabled_(false)
-        badge0's setHidden_(true)
 	end applicationWillFinishLaunching_
 	
 	on applicationShouldTerminate_(sender)
 		-- Insert code here to do any housekeeping before your application quits
+        do shell script "rm /tmp/openinstallercreatorflags.plist"
 		return current application's NSTerminateNow
 	end applicationShouldTerminate_
 	

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SelectedVolume</key>
+	<string></string>
+	<key>InstallerPath</key>
+	<string></string>
+	<key>CheckStructure</key>
+	<string>if [[ -e /tmp/InstallESD/BaseSystem.dmg ]]; then echo &quot;tmp&quot;; fi</string>
+	<key>CheckDiskSize</key>
+	<string>| awk &apos;{printf(&quot;%s\n&quot;, $2)}&apos; | awk NR\&gt;1 | rev | cut -c 2- | rev</string>
+</dict>
+</plist>
