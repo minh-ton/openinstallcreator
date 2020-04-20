@@ -21,7 +21,7 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 ***If you force close the app, you will have to go to /tmp and delete `openinstallcreatorflags.plist`, `pbzx`, and `Install macOS/OS X`.
 
 ## Known issues
-- The app often fails to download the macOS 10.15 Catalina Installer. The issue hasn't been investigated yet. 
+- The app often fails to download/prepare the macOS 10.15 Catalina Installer. The issue hasn't been investigated yet. 
 
 ## AppleScriptObj-C Limitations
 - When the app is running in the background, it won't show the GUI when clicked onto the Dock Icon. A workaround for this is to **_secondary click_** the openinstallcreator Dock Icon, then choose **_"Show All Window"_**.
