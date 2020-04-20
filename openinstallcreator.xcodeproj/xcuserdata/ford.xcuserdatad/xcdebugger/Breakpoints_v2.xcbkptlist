@@ -127,8 +127,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
-            landmarkName = "script AppDelegate"
-            landmarkType = "3">
+            landmarkName = "on selectOSVersionPopUpClicked_(sender)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -143,8 +143,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
             endingLineNumber = "142"
-            landmarkName = "script AppDelegate"
-            landmarkType = "3">
+            landmarkName = "on CreateNormalInstallMedia(InstallerPath,SelectedVolume,flagspath)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -175,8 +175,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "342"
             endingLineNumber = "342"
-            landmarkName = "script createinstallfilessh"
-            landmarkType = "3">
+            landmarkName = "on downloadAppleInstallers()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -207,8 +207,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "685"
             endingLineNumber = "685"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "on createNormalInstallersViewClicked_(sender)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,8 +223,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "687"
             endingLineNumber = "687"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "on createNormalInstallersViewClicked_(sender)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -255,8 +255,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "730"
             endingLineNumber = "730"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "on applicationWillFinishLaunching_(aNotification)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -270,9 +270,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "768"
-            endingLineNumber = "768"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            endingLineNumber = "768">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
