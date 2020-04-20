@@ -17,7 +17,7 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 
 ## Sidenotes
 - ***Do not use "Download Apple Installers" feature under OS X 10.6 (The feature isn't fully implemented yet).***
-- ***If you force close the app, you will have to go to /tmp and delete `openinstallcreatorflags.plist`, `pbzx`, and `Install macOS/OS X`.***
+- ***If you force close the app, you will have to go to `/tmp` and delete `openinstallcreatorflags.plist`, `pbzx`, and `Install macOS/OS X`.***
 
 ## Known issues
 - The app often fails to download/prepare the macOS 10.15 Catalina Installer. The issue hasn't been investigated yet. 
