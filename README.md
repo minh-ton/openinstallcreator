@@ -12,12 +12,16 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 - Download latest version: [Download](https://github.com/Minh-Ton/openinstallcreator/releases) (beta 3)
 - Download source code: [Download](https://github.com/Minh-Ton/openinstallcreator/archive/master.zip) (beta 3)
 
+## Additional features
+- The created Bootable Installer will have an Icon (shown in Boot Manager) base on the version of the Installer.
+
 ## Sidenotes
 
 ***Do not use "Download Apple Installers" feature under OS X 10.6 (The feature isn't fully implemented yet).***
+***If you force close the app, you will have to go to /tmp and delete `openinstallcreatorflags.plist`, `pbzx`, and `Install macOS/OS X`.
 
-## Additional features
-- The created Bootable Installer will have an Icon (shown in Boot Manager) base on the version of the Installer.
+## Known issues
+- The app often fails to download the macOS 10.15 Catalina Installer. The issue hasn't been investigated yet. 
 
 ## AppleScriptObj-C Limitations
 - When the app is running in the background, it won't show the GUI when clicked onto the Dock Icon. A workaround for this is to **_secondary click_** the openinstallcreator Dock Icon, then choose **_"Show All Window"_**.
