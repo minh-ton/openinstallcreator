@@ -41,14 +41,7 @@ script AppDelegate
         set selectedVolume to selectVolumePopUp0's titleOfSelectedItem() as text
         set selectedVolume to (do shell script "echo " & selectedVolume & "| sed 's/ /\\\\ /g'")
         set flagspath to "/tmp/openinstallercreatorflags.plist"
-        (* set VolumeSizeCheck to (do shell script "defaults read " & flagspath & " CheckDiskSize")
-        set VolumeSize to (do shell script "df -H /Volumes/" & (selectVolumePopUp0's titleOfSelectedItem() as text) & " | awk '{printf(" & (quoted form of "%s\n") & ", $2)}' | awk NR\\>1 | rev | cut -c 2- | rev")
-        display dialog VolumeSize
-        if VolumeSize >= "10" then *)
         do shell script "defaults write " & flagspath & " SelectedVolume " & selectedVolume
-        (* else if VolumeSize < "10" then
-        display alert "The selected Volume cannot be used to create a bootable installer." message "Please choose a volume at least 10GB or larger." & return & "(Error code: 1)"
-        end if *)
     end SelectVolumePopUpClicked_
     
     on selectInstallerButton0Clicked_(sender)
