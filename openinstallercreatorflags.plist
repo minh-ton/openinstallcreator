@@ -6,8 +6,18 @@
 	<string></string>
 	<key>InstallerPath</key>
 	<string></string>
+	<key>SelectedOSVersion</key>
+	<string></string>
+	<key>SavePath</key>
+	<string></string>
+	<key>View1Status</key>
+	<string>0</string>
+	<key>View4Status</key>
+	<string>0</string>
 	<key>CheckStructure</key>
 	<string>if [[ -e /tmp/InstallESD/BaseSystem.dmg ]]; then echo &quot;tmp&quot;; fi</string>
+	<key>CheckCurl</key>
+	<string>if [[ ! -f /opt/local/bin/curl || ! -f /opt/local/bin/curl ]]; then echo &quot;incompatible&quot;; fi</string>
 	<key>CheckDiskSize</key>
 	<string>| awk &apos;{printf(&quot;%s\n&quot;, $2)}&apos; | awk NR\&gt;1 | rev | cut -c 2- | rev</string>
 </dict>

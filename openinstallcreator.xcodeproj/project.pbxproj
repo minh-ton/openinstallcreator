@@ -14,7 +14,10 @@
 		01770E51244AE720003C924C /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01770E4F244AE720003C924C /* About.xib */; };
 		01770E53244AE898003C924C /* imac27.png in Resources */ = {isa = PBXBuildFile; fileRef = 01770E52244AE897003C924C /* imac27.png */; };
 		01770E55244AECAB003C924C /* badge.png in Resources */ = {isa = PBXBuildFile; fileRef = 01770E54244AECAB003C924C /* badge.png */; };
-		01F7D9F124361C5800729EE0 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7D9F024361C5800729EE0 /* AppleScriptObjC.framework */; };
+		01BB7EE9244B4C5700F19CED /* DownloadsFolder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 01BB7EE8244B4C5700F19CED /* DownloadsFolder.icns */; };
+		01BB7EEB244BE62000F19CED /* pbzx in Resources */ = {isa = PBXBuildFile; fileRef = 01BB7EEA244BE62000F19CED /* pbzx */; };
+		01BB7EED244BE65300F19CED /* volumeicon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01BB7EEC244BE65300F19CED /* volumeicon.bundle */; };
+		01F3D54C244C0DDE00E6FE9E /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7D9F024361C5800729EE0 /* AppleScriptObjC.framework */; };
 		01F7D9F424361C5800729EE0 /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D9F324361C5800729EE0 /* AppDelegate.applescript */; };
 		01F7D9F624361C5C00729EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F7D9F524361C5C00729EE0 /* Assets.xcassets */; };
 		01F7D9F924361C5C00729EE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F7D9F724361C5C00729EE0 /* MainMenu.xib */; };
@@ -26,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013B7EDB244DA1D60065F710 /* openinstallcreator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openinstallcreator.entitlements; sourceTree = "<group>"; };
 		014D8E6F243867C000CDFC20 /* elcapitan.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = elcapitan.tiff; sourceTree = "<group>"; };
 		0160047D244ABF7D0025D2BB /* createinstallfiles.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = createinstallfiles.sh; sourceTree = "<group>"; };
 		0169CE6F2449A35400B68E67 /* booticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = booticon.png; sourceTree = "<group>"; };
@@ -33,6 +37,9 @@
 		01770E50244AE720003C924C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/About.xib; sourceTree = "<group>"; };
 		01770E52244AE897003C924C /* imac27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imac27.png; sourceTree = "<group>"; };
 		01770E54244AECAB003C924C /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge.png; sourceTree = "<group>"; };
+		01BB7EE8244B4C5700F19CED /* DownloadsFolder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DownloadsFolder.icns; sourceTree = "<group>"; };
+		01BB7EEA244BE62000F19CED /* pbzx */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = pbzx; sourceTree = "<group>"; };
+		01BB7EEC244BE65300F19CED /* volumeicon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = volumeicon.bundle; sourceTree = "<group>"; };
 		01F7D9ED24361C5800729EE0 /* openinstallcreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openinstallcreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F7D9F024361C5800729EE0 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		01F7D9F324361C5800729EE0 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
@@ -51,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01F7D9F124361C5800729EE0 /* AppleScriptObjC.framework in Frameworks */,
+				01F3D54C244C0DDE00E6FE9E /* AppleScriptObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +76,7 @@
 				014D8E6F243867C000CDFC20 /* elcapitan.tiff */,
 				01770E54244AECAB003C924C /* badge.png */,
 				0169CE6F2449A35400B68E67 /* booticon.png */,
+				01BB7EE8244B4C5700F19CED /* DownloadsFolder.icns */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -80,8 +88,10 @@
 				01F7D9EF24361C5800729EE0 /* Frameworks */,
 				01F7D9EE24361C5800729EE0 /* Products */,
 				01770E4E244AE56A003C924C /* Resources */,
-				0160047D244ABF7D0025D2BB /* createinstallfiles.sh */,
+				01BB7EEC244BE65300F19CED /* volumeicon.bundle */,
 				0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */,
+				0160047D244ABF7D0025D2BB /* createinstallfiles.sh */,
+				01BB7EEA244BE62000F19CED /* pbzx */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +114,7 @@
 		01F7D9F224361C5800729EE0 /* openinstallcreator */ = {
 			isa = PBXGroup;
 			children = (
+				013B7EDB244DA1D60065F710 /* openinstallcreator.entitlements */,
 				01F7D9F324361C5800729EE0 /* AppDelegate.applescript */,
 				01F7D9F524361C5C00729EE0 /* Assets.xcassets */,
 				01F7D9F724361C5C00729EE0 /* MainMenu.xib */,
@@ -145,6 +156,11 @@
 				TargetAttributes = {
 					01F7D9EC24361C5800729EE0 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -171,14 +187,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01BB7EE9244B4C5700F19CED /* DownloadsFolder.icns in Resources */,
 				01770E53244AE898003C924C /* imac27.png in Resources */,
 				01F7DA0B243630FF00729EE0 /* restart.tiff in Resources */,
 				014D8E70243867C000CDFC20 /* elcapitan.tiff in Resources */,
+				01BB7EEB244BE62000F19CED /* pbzx in Resources */,
 				0169CE702449A35400B68E67 /* booticon.png in Resources */,
 				0169CE722449AC0800B68E67 /* openinstallercreatorflags.plist in Resources */,
 				01F7DA09243630F300729EE0 /* cancel.tiff in Resources */,
 				0160047E244ABF7D0025D2BB /* createinstallfiles.sh in Resources */,
 				01770E51244AE720003C924C /* About.xib in Resources */,
+				01BB7EED244BE65300F19CED /* volumeicon.bundle in Resources */,
 				01F7DA0D243631EC00729EE0 /* Installer.png in Resources */,
 				01F7D9F624361C5C00729EE0 /* Assets.xcassets in Resources */,
 				01770E55244AECAB003C924C /* badge.png in Resources */,
@@ -335,11 +354,18 @@
 		01F7DA0024361C5C00729EE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = openinstallcreater;
+				ASSETCATALOG_COMPILER_APPICON_NAME = openinstallcreator;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = openinstallcreator/openinstallcreator.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = NAR5D6HWAD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = openinstallcreator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -349,17 +375,25 @@
 				OSACOMPILE_EXECUTE_ONLY = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fordApps.openinstallcreater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		01F7DA0124361C5C00729EE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = openinstallcreater;
+				ASSETCATALOG_COMPILER_APPICON_NAME = openinstallcreator;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = openinstallcreator/openinstallcreator.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = NAR5D6HWAD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = openinstallcreator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,6 +403,7 @@
 				OSACOMPILE_EXECUTE_ONLY = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fordApps.openinstallcreater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

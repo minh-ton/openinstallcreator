@@ -15,14 +15,24 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="browseSaveFolder" destination="a3f-qL-EEU" id="3To-wG-6ro"/>
                 <outlet property="continueButton0" destination="74D-mH-PgT" id="VjU-KG-y2R"/>
+                <outlet property="continueButton1" destination="lvP-Hf-ICh" id="vIP-7m-pVf"/>
                 <outlet property="continueText0" destination="UZC-Bf-3sC" id="2ZP-2z-uUr"/>
+                <outlet property="continueText1" destination="a48-Rd-zt4" id="itD-nh-ESe"/>
+                <outlet property="createNormalInstallersView" destination="syl-45-iRd" id="wTk-Um-Ond"/>
+                <outlet property="downloadAppleInstallersView" destination="e2u-Wj-iIf" id="HOi-bH-sSc"/>
                 <outlet property="progressBar0" destination="DfI-VN-1bf" id="Qjj-sJ-3Ls"/>
+                <outlet property="progressBar1" destination="KOp-RJ-SIA" id="EFF-Cl-ZzY"/>
                 <outlet property="progressText0" destination="m2d-bY-2GK" id="4dx-0W-vXc"/>
+                <outlet property="progressText1" destination="qDm-lr-69P" id="9Yg-W4-dCr"/>
                 <outlet property="readybutton0" destination="Mhf-Il-vLf" id="jhs-ga-7hu"/>
+                <outlet property="readybutton1" destination="rwe-1x-KcW" id="YFU-dB-BUu"/>
                 <outlet property="selectInstallerButton0" destination="8vY-FJ-GuY" id="fU0-tz-hRr"/>
+                <outlet property="selectOSVersionPopUp" destination="ptg-jg-qlD" id="GTU-Ow-Awy"/>
                 <outlet property="selectVolumePopUp0" destination="8R8-EW-9J3" id="UtO-Zu-mcl"/>
                 <outlet property="statusText0" destination="BlW-Iq-LFy" id="dXr-Ao-yvG"/>
+                <outlet property="statusText1" destination="FE4-dc-Gwa" id="9Sp-zv-IX7"/>
                 <outlet property="theWindow" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -41,7 +51,7 @@
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                             <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
-                            <menuItem title="Check for Updates" keyEquivalent="u" id="Moc-7y-KAl"/>
+                            <menuItem title="Check for Updates..." keyEquivalent="u" id="Moc-7y-KAl"/>
                             <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                             <menuItem title="Services" id="NMo-om-nkz">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -84,31 +94,6 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CtG-1c-Cgt"/>
-                            <menuItem title="Normal Bootable Installer" id="R4o-n2-Eq4">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="performZoom:" target="-1" id="DIl-cC-cCs"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Patched macOS Installer" id="CWu-dV-ROE">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="performZoom:" target="-1" id="1TR-kH-EhM"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Patched OS X Installer" id="E7E-zq-Vx2">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="performZoom:" target="-1" id="jXT-vp-y3T"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Download macOS" id="WwE-nF-LBj">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="performZoom:" target="-1" id="lGp-Ne-5qA"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
                             <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -153,22 +138,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
-                    </button>
-                    <button verticalHuggingPriority="750" id="eec-0J-iah">
-                        <rect key="frame" x="-1" y="361" width="174" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="Patched macOS Installer" bezelStyle="shadowlessSquare" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JjU-iX-Frv">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
-                    <button verticalHuggingPriority="750" id="7uC-pC-Acu">
-                        <rect key="frame" x="-1" y="330" width="174" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="Patched OS X Installer" bezelStyle="shadowlessSquare" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fXp-dO-UBH">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
+                        <connections>
+                            <action selector="createNormalInstallersViewClicked:" target="Voe-Tx-rLC" id="Gkk-v7-fms"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="bz3-w5-jzn">
                         <rect key="frame" x="6" y="31" width="162" height="32"/>
@@ -187,17 +159,20 @@
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" id="Ssa-C1-WOX">
-                        <rect key="frame" x="-1" y="299" width="174" height="32"/>
+                        <rect key="frame" x="-1" y="362" width="174" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="Download macOS Installer" bezelStyle="shadowlessSquare" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sIV-fL-EYX">
+                        <buttonCell key="cell" type="square" title="Download Apple Installers" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sIV-fL-EYX">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="downloadAppleInstallersViewClicked:" target="Voe-Tx-rLC" id="cGB-Bq-opg"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ZmG-cU-eX2">
                         <rect key="frame" x="17" y="456" width="136" height="29"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Beta 2" id="FlS-zT-oUR">
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Beta 3" id="FlS-zT-oUR">
                             <font key="font" metaFont="system" size="24"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -207,106 +182,6 @@
                         <rect key="frame" x="0.0" y="440" width="173" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
-                    <customView id="syl-45-iRd" userLabel="Normal Bootable Installer View">
-                        <rect key="frame" x="172" y="0.0" width="528" height="500"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="fTp-2v-yeG">
-                                <rect key="frame" x="48" y="440" width="431" height="48"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Normal Bootable Installer" id="BFT-Cb-LvE">
-                                    <font key="font" metaFont="system" size="40"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <popUpButton verticalHuggingPriority="750" id="8R8-EW-9J3" userLabel="Volume Select">
-                                <rect key="frame" x="114" y="385" width="300" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="ZbG-ql-O2C">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="D5I-LY-mSB"/>
-                                </popUpButtonCell>
-                                <connections>
-                                    <action selector="SelectVolumePopUp0Clicked:" target="Voe-Tx-rLC" id="G4m-8S-hac"/>
-                                </connections>
-                            </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="LQk-dK-mwy">
-                                <rect key="frame" x="114" y="419" width="299" height="17"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Select a volume to become a Bootable Installer..." id="eVL-Is-jvx">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button id="74D-mH-PgT">
-                                <rect key="frame" x="248" y="32" width="30" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="arrowbutton" imagePosition="only" alignment="center" enabled="NO" imageScaling="proportionallyUpOrDown" inset="2" id="lgz-vF-SDb">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="continueButton0Clicked:" target="Voe-Tx-rLC" id="U4L-fR-rve"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="UZC-Bf-3sC">
-                                <rect key="frame" x="234" y="13" width="59" height="17"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Continue" id="fiO-4N-mdi">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" id="DfI-VN-1bf">
-                                <rect key="frame" x="34" y="68" width="461" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </progressIndicator>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="BlW-Iq-LFy">
-                                <rect key="frame" x="57" y="131" width="413" height="17"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Click the OS X Icon to browse for a macOS Installer... (10.9 to 10.15)" id="zaH-61-aqE">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="m2d-bY-2GK">
-                                <rect key="frame" x="49" y="90" width="422" height="17"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="@%" id="ojO-se-oWd">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" id="Mhf-Il-vLf">
-                                <rect key="frame" x="215" y="92" width="96" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="I'm ready" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="l9u-fz-6S4">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="readybutton0Clicked:" target="Voe-Tx-rLC" id="Obb-vK-mKV"/>
-                                </connections>
-                            </button>
-                            <button id="8vY-FJ-GuY">
-                                <rect key="frame" x="133" y="154" width="263" height="230"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="elcapitan" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="1ki-B9-N7B">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="selectInstallerButton0Clicked:" target="Voe-Tx-rLC" id="3eT-Tu-3NU"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                    </customView>
                     <button verticalHuggingPriority="750" id="bPj-eW-Teb">
                         <rect key="frame" x="-1" y="2" width="176" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -318,6 +193,233 @@
                             <action selector="AboutButtonClicked:" target="Voe-Tx-rLC" id="pfb-3l-ByU"/>
                         </connections>
                     </button>
+                    <customView id="Yss-v1-i5v">
+                        <rect key="frame" x="172" y="0.0" width="528" height="500"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <customView id="syl-45-iRd" userLabel="Normal Bootable Installer View">
+                                <rect key="frame" x="0.0" y="0.0" width="528" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="fTp-2v-yeG">
+                                        <rect key="frame" x="-2" y="440" width="532" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Normal Bootable Installer" id="BFT-Cb-LvE">
+                                            <font key="font" metaFont="system" size="40"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" id="8R8-EW-9J3" userLabel="Volume Select">
+                                        <rect key="frame" x="114" y="385" width="300" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="ZbG-ql-O2C">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="D5I-LY-mSB"/>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <action selector="SelectVolumePopUp0Clicked:" target="Voe-Tx-rLC" id="G4m-8S-hac"/>
+                                        </connections>
+                                    </popUpButton>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="LQk-dK-mwy">
+                                        <rect key="frame" x="114" y="419" width="299" height="17"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Select a volume to become a Bootable Installer..." id="eVL-Is-jvx">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button id="74D-mH-PgT">
+                                        <rect key="frame" x="248" y="32" width="30" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="arrowbutton" imagePosition="only" alignment="center" enabled="NO" imageScaling="proportionallyUpOrDown" inset="2" id="lgz-vF-SDb">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="continueButton0Clicked:" target="Voe-Tx-rLC" id="U4L-fR-rve"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="UZC-Bf-3sC">
+                                        <rect key="frame" x="234" y="13" width="59" height="17"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Continue" id="fiO-4N-mdi">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" id="DfI-VN-1bf">
+                                        <rect key="frame" x="34" y="68" width="461" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </progressIndicator>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="BlW-Iq-LFy">
+                                        <rect key="frame" x="57" y="131" width="413" height="17"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Click the OS X Icon to browse for a macOS Installer... (10.9 to 10.15)" id="zaH-61-aqE">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="m2d-bY-2GK">
+                                        <rect key="frame" x="49" y="90" width="422" height="17"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="@%" id="ojO-se-oWd">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" id="Mhf-Il-vLf">
+                                        <rect key="frame" x="215" y="92" width="96" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="I'm ready" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="l9u-fz-6S4">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="readybutton0Clicked:" target="Voe-Tx-rLC" id="Obb-vK-mKV"/>
+                                        </connections>
+                                    </button>
+                                    <button id="8vY-FJ-GuY">
+                                        <rect key="frame" x="133" y="154" width="263" height="230"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="elcapitan" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="1ki-B9-N7B">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="selectInstallerButton0Clicked:" target="Voe-Tx-rLC" id="3eT-Tu-3NU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </customView>
+                            <customView id="e2u-Wj-iIf" userLabel="Download Apple Installers View">
+                                <rect key="frame" x="0.0" y="0.0" width="528" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="CvJ-vB-fV0">
+                                        <rect key="frame" x="-2" y="440" width="532" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Download Apple Installers" id="NEl-di-4E7">
+                                            <font key="font" metaFont="system" size="40"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" id="ptg-jg-qlD" userLabel="Volume Select">
+                                        <rect key="frame" x="115" y="385" width="300" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="push" title="macOS 10.15 Catalina" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="zFV-SN-vOw" id="GmJ-h0-z1F">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="5aN-76-wDd">
+                                                <items>
+                                                    <menuItem title="macOS 10.15 Catalina" state="on" id="zFV-SN-vOw">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="macOS 10.14 Mojave" id="MPW-Pt-QFs">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="macOS 10.13 High Sierra" id="Btt-Hj-WTP">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="macOS 10.12 Sierra" id="m6g-A1-E3c">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="OS X 10.11 El Capitan" id="PdQ-eS-Nx9">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="OS X 10.10 Yosemite" id="UmU-O3-Egd">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <action selector="selectOSVersionPopUpClicked:" target="Voe-Tx-rLC" id="LB6-O7-gYy"/>
+                                        </connections>
+                                    </popUpButton>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="BSd-qk-q9I">
+                                        <rect key="frame" x="143" y="419" width="243" height="17"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Select an Installer Version to download" id="r6a-wX-w2b">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button id="lvP-Hf-ICh">
+                                        <rect key="frame" x="248" y="32" width="30" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="arrowbutton" imagePosition="only" alignment="center" enabled="NO" imageScaling="proportionallyUpOrDown" inset="2" id="EZG-l2-mj5">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="continueButton1Clicked:" target="Voe-Tx-rLC" id="P5H-vH-Cjp"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="a48-Rd-zt4">
+                                        <rect key="frame" x="234" y="13" width="59" height="17"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Continue" id="gb2-S1-wO0">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="FE4-dc-Gwa">
+                                        <rect key="frame" x="57" y="131" width="413" height="17"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Click the Folder Icon to select a save folder..." id="9XP-cD-epO">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="qDm-lr-69P">
+                                        <rect key="frame" x="49" y="90" width="422" height="17"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="@%" id="hcP-c9-gOg">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" id="rwe-1x-KcW">
+                                        <rect key="frame" x="215" y="92" width="96" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="I'm ready" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="n3M-ZZ-0gl">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="readybutton1Clicked:" target="Voe-Tx-rLC" id="5wI-yC-tj7"/>
+                                        </connections>
+                                    </button>
+                                    <button id="a3f-qL-EEU">
+                                        <rect key="frame" x="112" y="144" width="293" height="237"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="DownloadsFolder" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5tN-Qy-NfH">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="browseSaveFolderClicked:" target="Voe-Tx-rLC" id="JwM-9N-d9U"/>
+                                        </connections>
+                                    </button>
+                                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="bar" id="KOp-RJ-SIA">
+                                        <rect key="frame" x="35" y="72" width="460" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </progressIndicator>
+                                </subviews>
+                            </customView>
+                        </subviews>
+                    </customView>
                 </subviews>
             </view>
             <point key="canvasLocation" x="123" y="-107"/>
@@ -325,6 +427,7 @@
         <menuItem title="Preferences…" keyEquivalent="," id="UXo-14-hf9"/>
     </objects>
     <resources>
+        <image name="DownloadsFolder" width="512" height="512"/>
         <image name="arrowbutton" width="30" height="30"/>
         <image name="elcapitan" width="512" height="512"/>
     </resources>
