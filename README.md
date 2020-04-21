@@ -33,7 +33,7 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 
 ## Cannot launch openinstallcreator.app? 
 1. Secondary click the app, and choose "Open".
-<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK1.png" width="400">
+<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK1.png">
 
 2. A dialog will appear. Select "Open" again.
-<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK2.png" width="400"> 
+<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK2.png"> 
