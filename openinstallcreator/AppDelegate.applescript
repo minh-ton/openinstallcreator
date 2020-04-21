@@ -11,6 +11,7 @@ script AppDelegate
 	
 	-- IBOutlets
 	property theWindow : missing value
+    property NSAlert : class "NSAlert"
     
     -- View 1
     property createNormalInstallersView : missing value
@@ -34,13 +35,16 @@ script AppDelegate
     property readybutton1 : missing value
     property browseSaveFolder : missing value
     
+    on alertDidEnd()
+    end alertDidEnd
+    
    -----------------------------------------------------------------------------------
                         --  FIRST VIEW  -  NORMAL BOOTABLE INSTALLER --
    
     on SelectVolumePopUp0Clicked_(sender)
         set selectedVolume to selectVolumePopUp0's titleOfSelectedItem() as text
         set selectedVolume to (do shell script "echo " & selectedVolume & "| sed 's/ /\\\\ /g'")
-        set flagspath to "/tmp/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
         do shell script "defaults write " & flagspath & " SelectedVolume " & selectedVolume
     end SelectVolumePopUpClicked_
     
@@ -50,21 +54,23 @@ script AppDelegate
         statusText0's setStringValue:"Now, please select the I'm ready button to continue."
         set InstallerPath to (do shell script "echo " & InstallerPath & "| sed 's/ /\\\\ /g'")
         
-        set flagspath to "/tmp/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
         do shell script "defaults write " & flagspath & " InstallerPath " & InstallerPath
         
         set valid to (do shell script "defaults read " & InstallerPath & "Contents/Info.plist CFBundleIconFile")
         if valid = "InstallAssistant" then
         else
-        display alert "Fail to verify the selected Installer." message "This is not a macOS or OS X Installer. Please try again." & return & "(Error code: 2)"
+            set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Fail to verify the selected Installer.", "OK", "Error code: 2", "", "This is not a macOS or OS X Installer. Please try again.")
+            myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
         end if
     end selectInstallerButton0Clicked_
     
     on readybutton0Clicked_(sender)
-        set flagspath to "/tmp/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
         set InstallerPath to (do shell script "defaults read " & flagspath & " InstallerPath")
         if InstallerPath = "unavailable" then
-            display alert "Installer Unavailable for Creation Process." message "Oops... Seems like you forgot to choose an Installer." & return & "(Error code: 3)"
+            set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Have you selected an Apple Installer?", "OK", "Error code: 3", "", "Oops... Seems like you forgot to choose an Installer.")
+            myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
         else
             continueButton0's setEnabled_(true)
             selectVolumePopUp0's setEnabled_(false)
@@ -75,7 +81,7 @@ script AppDelegate
     end readybutton0Clicked_
     
     on continueButton0Clicked_(sender)
-        set flagspath to "/tmp/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
         set InstallerPath to (do shell script "defaults read " & flagspath & " InstallerPath")
         set OriginalInstallerPath to InstallerPath
         set InstallerPath to (do shell script "echo " & InstallerPath & "| sed 's/ /\\\\ /g' | rev | cut -c 2- | rev")
@@ -95,7 +101,7 @@ script AppDelegate
                         -- FOURTH VIEW - DOWNLOAD APPLE INSTALLERS --
     
     on selectOSVersionPopUpClicked_(sender)
-        set flagspath to "/tmp/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
         set SelectedOSVersion to ((selectOSVersionPopUp's indexOfSelectedItem()) as string) as integer
         do shell script "defaults write " & flagspath & " SelectedOSVersion " & SelectedOSVersion
     end selectOSVersionPopUpClicked_
@@ -106,24 +112,27 @@ script AppDelegate
         set SavePath to quoted form of SavePath
         set writable to do shell script "test -w " & SavePath & "; echo $?"
         if writable = "1" then
-            display alert "Destination is not writable." message "Please choose a writable folder." & return & "(Error code: 5)"
+            set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Destination is not writable.", "OK", "Error code: 5", "", "Please choose a writable destination folder to save the Apple Installer later.")
+            myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
         else if writable = "0" then
-            set flagspath to "/tmp/openinstallercreatorflags.plist"
+            set flagspath to "/tmp/openinstallcreatorflags.plist"
             do shell script "defaults write " & flagspath & " SavePath " & SavePath
+            statusText1's setStringValue:"Now, please select the I'm ready button to continue."
         end if
     end browseSaveFolderClicked_
     
     on readybutton1Clicked_(sender)
-        set flagspath to "/tmp/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
         set SavePath to (do shell script "defaults read " & flagspath & " SavePath")
         if SavePath = "unavailable" then
-            display alert "No destination folder has been specified." message "Well, just try to click the Folder Icon and browse for a folder to save the downloaded macOS/OS X Installer." & return & "(Error code: 4)"
+            set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("No destination folder has been specified.", "OK", "Error code: 4", "", "Try to click the Folder Icon and browse for a folder to save the macOS/OS X Installer.")
+            myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
         else
             selectOSVersionPopUp's setEnabled_(false)
             readybutton1's setEnabled_(false)
             browseSaveFolder's setEnabled_(false)
             continueButton1's setEnabled_(true)
-            statusText1's setStringValue:"Now, please select the I'm ready button to continue."
+            statusText1's setStringValue:"Press the Continue button to start the download process."
         end if
     end readybutton1Clicked_
     
@@ -140,6 +149,7 @@ script AppDelegate
         progressText0's setHidden_(false)
         readybutton0's setHidden_(true)
         continueButton0's setEnabled_(false)
+        progressBar0's setHidden_(false)
         
         -- Ask root permission
         progressText0's setStringValue: "Step 1 of 11: Starting Helper..."
@@ -344,8 +354,11 @@ script AppDelegate
         readybutton1's setHidden_(true)
         progressText1's setHidden_(false)
         
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        -- set installerdownload to (do shell script "defaults read " & flagspath & " installerdownload")
+        -- set installerprep to (do shell script "defaults read " & flagspath & " installerprep")
+        
         delay 3
-        set flagspath to "/tmp/openinstallercreatorflags.plist"
         set SavePath to (do shell script "defaults read " & flagspath & " SavePath")
         set OriginalSavePath to SavePath
         set SavePath to (do shell script "echo " & SavePath & "| sed 's/ /\\\\ /g' | rev | cut -c 2- | rev")
@@ -362,10 +375,11 @@ script AppDelegate
         if Volume_Version_Short = "10.7." then
             progressText1's setStringValue: "Checking Curl Version..."
             delay 3
-            set CheckCurl to (do shell script "defaults read /tmp/openinstallercreatorflags.plist CheckCurl")
+            set CheckCurl to (do shell script "defaults read /tmp/openinstallcreatorflags.plist CheckCurl")
             set CurlCompatibility to (do shell script CheckCurl)
             if CurlCompatibility = "incompatible" then
-                display alert "Curl version check failed." message "This version of OS X requires Xcode Command Line Tools, MacPorts, and curl updates to be manually installed."
+                set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Curl version check failed.", "OK", "", "", "This version of OS X requires Xcode Command Line Tools, MacPorts, and curl updates to be manually installed.")
+                myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
                 try
                     error number -128
                 end try
@@ -387,7 +401,8 @@ script AppDelegate
                 exit repeat
                 on error
                 if i = 2 then
-                    display alert "No Internet Connection" message "Please connect to the Internet to download the Installer."
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("No Internet Connection.", "OK", "", "", "Please connect to the Internet to download the Installer.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
                     error number -128
                 end if
             end try
@@ -401,7 +416,9 @@ script AppDelegate
             do shell script "cp " & pbzx & " /tmp"
             do shell script "chmod +x /tmp/pbzx"
             on error
-            display alert "Failed to prepare resources" message "(Error code: 6)"
+            set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Failed to prepare resources.", "OK", "Error code: 6", "", "Couldn't copy file to temporary folder.")
+            myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+            error number -128
         end try
         
         -- Input Installer Version
@@ -445,162 +462,223 @@ script AppDelegate
         end if
         
         on error
-        display alert "Failed to Prepare Catalog." message "(Error code: 7)"
+        set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Failed to prepare Catalog file.", "OK", "Error code: 7", "", "Couldn't get download URLs ready.")
+        myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+        error number -128
         end try
     
         delay 3
-        do shell script "mkdir /tmp/" & (quoted form of Installer_Name)
-        
+        do shell script "mkdir -p /tmp/" & (quoted form of Installer_Name)
         
         -- Download & Prepare Installer
         progressText1's setStringValue: "Downloading Installer..."
         delay 3
+        
+        set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/downloadosflags.plist"
+        do shell script "rsync -a -v --ignore-existing " & flagspath & " " & "/tmp/" & (quoted form of Installer_Name) & "/"
+        
+        set flagspath to "/tmp/" & (quoted form of Installer_Name) & "/downloadosflags.plist"
+        set installassistantauto to (do shell script "defaults read " & flagspath & " installassistantauto")
+        set applediagnosticschunk to (do shell script "defaults read " & flagspath & " applediagnosticschunk")
+        set applediagnosticsdmg to (do shell script "defaults read " & flagspath & " applediagnosticsdmg")
+        set basesystemchuck to (do shell script "defaults read " & flagspath & " basesystemchuck")
+        set basesystemdmg to (do shell script "defaults read " & flagspath & " basesystemdmg")
+        set installesd to (do shell script "defaults read " & flagspath & " installesd")
+        set installdmg to (do shell script "defaults read " & flagspath & " installdmg")
+        set installpkg to (do shell script "defaults read " & flagspath & " installpkg")
+        
         if InstallerVer is in {"10.13", "10.14", "10.15"} then
             
             -- Download InstallAssistantAuto.pkg
-            try
-            progressText1's setStringValue: "Downloading InstallAssistantAuto.pkg..."
-            delay 3
-            do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/InstallAssistantAuto.pkg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/InstallAssistantAuto.pkg"
-            on error
-                do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-                do shell script "rm /tmp/pbzx"
-                display alert "Failed to download InstallAssistantAuto.pkg" message "(Error code: 8)"
-            end try
+            if not (installassistantauto = "1") then
+                try
+                    progressText1's setStringValue: "Downloading InstallAssistantAuto.pkg..."
+                    delay 3
+                    do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/InstallAssistantAuto.pkg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/InstallAssistantAuto.pkg"
+                    on error
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download InstallAssistantAuto.pkg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
+                end try
+                do shell script "defaults write " & flagspath & " installassistantauto 1"
+            end if
             
             -- Download AppleDiagnostics.chunklist
-            try
-            progressText1's setStringValue: "Downloading AppleDiagnostics.chunklist..."
-            delay 3
-            do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.chunklist http://swcdn.apple.com/content/downloads/" & Installer_URL & "/AppleDiagnostics.chunklist"
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to download AppleDiagnostics.chunklist" message "(Error code: 8)"
-            end try
+            if not (applediagnosticschunk = "1") then
+                try
+                    progressText1's setStringValue: "Downloading AppleDiagnostics.chunklist..."
+                    delay 3
+                    do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.chunklist http://swcdn.apple.com/content/downloads/" & Installer_URL & "/AppleDiagnostics.chunklist"
+                    on error
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download AppleDiagnostics.chunklist", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
+                end try
+                do shell script "defaults write " & flagspath & " applediagnosticschunk 1"
+            end if
             
             -- Download AppleDiagnostics.dmg
-            try
-            progressText1's setStringValue: "Downloading AppleDiagnostics.dmg..."
-            delay 3
-            do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/AppleDiagnostics.dmg"
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to download AppleDiagnostics.dmg" message "(Error code: 8)"
-            end try
+            if not (applediagnosticsdmg = "1") then
+                try
+                    progressText1's setStringValue: "Downloading AppleDiagnostics.dmg..."
+                    delay 3
+                    do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/AppleDiagnostics.dmg"
+                    on error
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download AppleDiagnostics.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
+                end try
+                do shell script "defaults write " & flagspath & " applediagnosticsdmg 1"
+            end if
             
             -- Download BaseSystem.chunklist
-            try
-            progressText1's setStringValue: "Downloading BaseSystem.chunklist..."
-            delay 3
-            do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.chunklist http://swcdn.apple.com/content/downloads/" & Installer_URL & "/BaseSystem.chunklist"
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to download BaseSystem.chunklist" message "(Error code: 8)"
-            end try
+            if not (basesystemchuck = "1") then
+                try
+                    progressText1's setStringValue: "Downloading BaseSystem.chunklist..."
+                    delay 3
+                    do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.chunklist http://swcdn.apple.com/content/downloads/" & Installer_URL & "/BaseSystem.chunklist"
+                    on error
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download BaseSystem.chunklist", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
+                end try
+                do shell script "defaults write " & flagspath & " basesystemchuck 1"
+            end if
             
             -- Download BaseSystem.dmg
-            with timeout of 86400 seconds
-                try
-                    progressText1's setStringValue: "Downloading BaseSystem.dmg..."
-                    delay 3
-                    do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/BaseSystem.dmg"
-                    on error
-                    do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-                    do shell script "rm /tmp/pbzx"
-                    display alert "Failed to download BaseSystem.dmg" message "(Error code: 8)"
-                end try
-            end timeout
+            if not (basesystemdmg = "1") then
+                with timeout of 86400 seconds
+                    try
+                        progressText1's setStringValue: "Downloading BaseSystem.dmg..."
+                        delay 3
+                        do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/BaseSystem.dmg"
+                        on error
+                        set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download BaseSystem.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
+                        myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        error number -128
+                    end try
+                end timeout
+                do shell script "defaults write " & flagspath & " basesystemdmg 1"
+            end if
             
             -- Download InstallESD.dmg
-            progressText1's setStringValue: "Downloading InstallESD.dmg..."
-            with timeout of 86400 seconds
-                try
-                    delay 3
-                    do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/InstallESD.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/InstallESDDmg.pkg"
-                    on error
-                    do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-                    do shell script "rm /tmp/pbzx"
-                    display alert "Failed to download InstallESD.dmg" message "(Error code: 8)"
-                end try
-            end timeout
+            if not (installesd = "1") then
+                progressText1's setStringValue: "Downloading InstallESD.dmg..."
+                with timeout of 86400 seconds
+                    try
+                        delay 3
+                        do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/InstallESD.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/InstallESDDmg.pkg"
+                        on error
+                        set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download InstallESD.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
+                        myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        error number -128
+                    end try
+                end timeout
+                do shell script "defaults write " & flagspath & " installesd 1"
+            end if
             
             -- Prepare Installer
             progressText1's setStringValue: "Extracting Installer from Package..."
-            try
-            delay 3
-            do shell script "cd /tmp/" & (quoted form of Installer_Name) & " && /tmp/pbzx /tmp/" & (quoted form of Installer_Name) & "/InstallAssistantAuto.pkg | cpio -i"
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to extract Installer from Package." message "(Error code: 9)"
-            end try
+            
+            if not (installassistantauto = "2") then
+                try
+                    delay 3
+                    do shell script "cd /tmp/" & (quoted form of Installer_Name) & " && /tmp/pbzx /tmp/" & (quoted form of Installer_Name) & "/InstallAssistantAuto.pkg | cpio -i"
+                    on error
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Failed to extract Installer Files from downloaded Packages.", "OK", "Error code: 9", "", "Check your Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
+                end try
+                do shell script "defaults write " & flagspath & " installassistantauto 2"
+            end if
             
             progressText1's setStringValue: "Copying Files to Destination..."
-            try
-            delay 3
-            do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name) & ".app " & SavePath
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to copy Installer to destination." message "(Error code: 9)"
-            end try
+            
+            if not (installassistantauto = "3") then
+                try
+                    delay 3
+                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name) & ".app " & SavePath
+                    on error
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't extract Installer Files from downloaded Packages.", "OK", "Error code: 9", "", "Check your Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
+                end try
+                do shell script "defaults write " & flagspath & " installassistantauto 3"
+            end if
             
             progressText1's setStringValue: "Copying AppleDiagnostics.chunklist to Destination..."
-            try
-            delay 3
-            do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.chunklist " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to copy AppleDiagnostics.chunklist." message "(Error code: 9)"
-            end try
+            
+            if not (applediagnosticschunk = "3") then
+                try
+                    delay 3
+                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.chunklist " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                    on error
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy AppleDiagnostics.chunklist to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
+                end try
+                do shell script "defaults write " & flagspath & " applediagnosticschunk 3"
+            end if
             
             progressText1's setStringValue: "Copying AppleDiagnostics.dmg to Destination..."
-            try
-            delay 3
-            do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to copy AppleDiagnostics.dmg." message "(Error code: 9)"
-            end try
+            
+            if not (applediagnosticsdmg = "3") then
+                try
+                    delay 3
+                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                    on error
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy AppleDiagnostics.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
+                end try
+                do shell script "defaults write " & flagspath & " applediagnosticsdmg 3"
+            end if
             
             progressText1's setStringValue: "Copying BaseSystem.chunklist to Destination..."
-            try
-            delay 3
-            do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.chunklist " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to copy BaseSystem.chunklist." message "(Error code: 9)"
-            end try
+            
+            if not (basesystemchuck = "3") then
+                try
+                    delay 3
+                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.chunklist " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                    on error
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy BaseSystem.chunklist to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
+                end try
+                do shell script "defaults write " & flagspath & " basesystemchuck 3"
+            end if
             
             progressText1's setStringValue: "Copying BaseSystem.dmg to Destination..."
-            with timeout of 86400 seconds
-                try
-                    delay 3
-                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
-                    on error
-                    do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-                    do shell script "rm /tmp/pbzx"
-                    display alert "Failed to copy BaseSystem.dmg." message "(Error code: 9)"
-                end try
-            end timeout
+            
+            if not (basesystemdmg = "3") then
+                with timeout of 86400 seconds
+                    try
+                        delay 3
+                        do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                        on error
+                        set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy BaseSystem.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
+                        myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        error number -128
+                    end try
+                end timeout
+                do shell script "defaults write " & flagspath & " basesystemdmg 3"
+            end if
             
             progressText1's setStringValue: "Copying InstallESD.dmg to Destination..."
-            with timeout of 86400 seconds
-                try
-                    delay 3
-                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/InstallESD.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
-                    on error
-                    do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-                    do shell script "rm /tmp/pbzx"
-                    display alert "Failed to copy InstallESD.dmg." message "(Error code: 9)"
-                end try
-            end timeout
+
+            if not (installesd = "3") then
+                with timeout of 86400 seconds
+                    try
+                        delay 3
+                        do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/InstallESD.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                        on error
+                        set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy InstallESD.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
+                        myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        error number -128
+                    end try
+                end timeout
+                do shell script "defaults write " & flagspath & " installesd 3"
+            end if
         
         end if
 
@@ -608,70 +686,86 @@ script AppDelegate
             
             -- Download InstallOS.dmg
             progressText1's setStringValue: "Downloading InstallOS.dmg..."
-            with timeout of 86400 seconds
-                try
-                    delay 3
-                    do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name & ".dmg") & " " & Installer_URL
-                    on error
-                    do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-                    do shell script "rm /tmp/pbzx"
-                    display alert "Failed to download InstallOS.dmg" message "(Error code: 8)"
-                end try
-            end timeout
+            
+            if not (installdmg = "1") then
+                with timeout of 86400 seconds
+                    try
+                        delay 3
+                        do shell script Curl & " -L -s -o /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name & ".dmg") & " " & Installer_URL
+                        on error
+                        set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download InstallOS.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
+                        myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        error number -128
+                    end try
+                end timeout
+                do shell script "defaults write " & flagspath & " installdmg 1"
+            end if
             
             -- Prepare Installer
             progressText1's setStringValue: "Mounting Disk Image..."
+
             delay 3
             try
-            do shell script "hdiutil attach /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name & ".dmg") & " -mountpoint /tmp/" & (quoted form of Installer_Name & "_dmg") & " -nobrowse"
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to mount InstallOS.dmg." message "(Error code: 10)"
+                do shell script "hdiutil attach /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name & ".dmg") & " -mountpoint /tmp/" & (quoted form of Installer_Name & "_dmg") & " -nobrowse"
+                on error
+                set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't mount InstallOS.dmg", "OK", "Error code: 10", "", "Check your Available disk space.")
+                myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                error number -128
             end try
             
             set Installer_PKG to (do shell script "ls /tmp/" & (quoted form of Installer_Name & "_dmg"))
             set Installer_PKG_Partial to (do shell script "echo " & (quoted form of Installer_PKG) & " | cut -f1 -d.")
             
             progressText1's setStringValue: "Expanding Packages..."
-            try
-            delay 3
-            do shell script "pkgutil --expand /tmp/" & (quoted form of Installer_Name & "_dmg") & "/" & (quoted form of Installer_PKG) & " /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_PKG_Partial)
-            do shell script "tar -xf /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_PKG_Partial) & "/" & (quoted form of Installer_PKG) & "/Payload -C " & SavePath
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to expand Installer Packages." message "(Error code: 9)"
-            end try
-            
-            progressText1's setStringValue: "Copying InstallESD.dmg to Destination..."
-            with timeout of 86400 seconds
+
+            if not (installpkg = "1") then
                 try
                     delay 3
-                    do shell script "cp /tmp/" & (quoted form of Installer_Name & "_dmg") & "/" & (quoted form of Installer_PKG) & " " & SavePath & "/" & (quoted form of Installer_Name & ".app") & "/Contents/SharedSupport/InstallESD.dmg"
+                    do shell script "pkgutil --expand /tmp/" & (quoted form of Installer_Name & "_dmg") & "/" & (quoted form of Installer_PKG) & " /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_PKG_Partial)
+                    do shell script "tar -xf /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_PKG_Partial) & "/" & (quoted form of Installer_PKG) & "/Payload -C " & SavePath
                     on error
-                    do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-                    do shell script "rm /tmp/pbzx"
-                    display alert "Failed to copy InstallESD.dmg." message "(Error code: 9)"
+                    set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't expand Installer Packages.", "OK", "Error code: 9", "", "Check your Available disk space.")
+                    myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    error number -128
                 end try
-            end timeout
+                do shell script "defaults write " & flagspath & " installpkg 1"
+            end if
+            
+            progressText1's setStringValue: "Copying InstallESD.dmg to Destination..."
+
+            if not (installesd = "1") then
+                with timeout of 86400 seconds
+                    try
+                        delay 3
+                        do shell script "cp /tmp/" & (quoted form of Installer_Name & "_dmg") & "/" & (quoted form of Installer_PKG) & " " & SavePath & "/" & (quoted form of Installer_Name & ".app") & "/Contents/SharedSupport/InstallESD.dmg"
+                        on error
+                        set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy InstallESD.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
+                        myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        error number -128
+                    end try
+                end timeout
+                do shell script "defaults write " & flagspath & " installesd 1"
+            end if
             
             progressText1's setStringValue: "Unmounting Disk Image..."
+
             try
-            delay 3
-            do shell script "hdiutil detach /tmp/" & (quoted form of Installer_Name & "_dmg")
-            on error
-            do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
-            do shell script "rm /tmp/pbzx"
-            display alert "Failed to unmount InstallOS.dmg." message "(Error code: 10)"
+                delay 3
+                do shell script "hdiutil detach /tmp/" & (quoted form of Installer_Name & "_dmg")
+                on error
+                set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't unmount InstallOS.dmg.", "OK", "Error code: 10", "", "Check your Available disk space.")
+                myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                error number -128
             end try
         end if
         
         -- Remove temporary files
         progressText1's setStringValue: "Removing Temporary Files..."
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
         delay 3
-        do shell script "rm -R /tmp/" & (quoted form of Installer_Name)
+        do shell script "rm -R /tmp/Install*"
         do shell script "rm /tmp/pbzx"
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
         progressText1's setStringValue: "Operation Completed."
         progressBar1's stopAnimation:me
 
@@ -681,7 +775,7 @@ script AppDelegate
                                 -- SIDE BAR ACTIONS --
                                 
     on createNormalInstallersViewClicked_(sender)
-        set flagspath to "/tmp/openinstallercreatorflags.plist"
+        set flagspath to "/tmp/openinstallcreatorflags.plist"
         set View1Status to (do shell script "defaults read " & flagspath & " View1Status")
         set View4Status to (do shell script "defaults read " & flagspath & " View4Status")
         if View4Status = "1" then
@@ -695,20 +789,26 @@ script AppDelegate
     end createNormalInstallersViewClicked_
     
     on downloadAppleInstallersViewClicked_(sender) -- Only for 10.7
-        set flagspath to "/tmp/openinstallercreatorflags.plist"
-        set View1Status to (do shell script "defaults read " & flagspath & " View1Status")
-        set View4Status to (do shell script "defaults read " & flagspath & " View4Status")
-        if View1Status = "1" then
-            createNormalInstallersView's setHidden_(true)
-            downloadAppleInstallersView's setHidden_(false)
-            progressBar1's setHidden_(true)
-            set SelectedOSVersion to ((selectOSVersionPopUp's indexOfSelectedItem()) as string) as integer
-            do shell script "defaults write " & flagspath & " SelectedOSVersion " & SelectedOSVersion
-            do shell script "defaults write " & flagspath & " SavePath unavailable"
-            set ViewStatus to "0"
-            do shell script "defaults write " & flagspath & " View1Status " & ViewStatus
-            set ViewStatus to "1"
-            do shell script "defaults write " & flagspath & " View4Status " & ViewStatus
+        set Volume_Version_Short to (do shell script "defaults read /System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5")
+        if Volume_Version_Short is in {"10.7.", "10.8.", "10.9.", "10.10", "10.11", "10.12", "10.13", "10.14", "10.15"} then
+            set flagspath to "/tmp/openinstallcreatorflags.plist"
+            set View1Status to (do shell script "defaults read " & flagspath & " View1Status")
+            set View4Status to (do shell script "defaults read " & flagspath & " View4Status")
+            if View1Status = "1" then
+                createNormalInstallersView's setHidden_(true)
+                downloadAppleInstallersView's setHidden_(false)
+                progressBar1's setHidden_(true)
+                set SelectedOSVersion to ((selectOSVersionPopUp's indexOfSelectedItem()) as string) as integer
+                do shell script "defaults write " & flagspath & " SelectedOSVersion " & SelectedOSVersion
+                do shell script "defaults write " & flagspath & " SavePath unavailable"
+                set ViewStatus to "0"
+                do shell script "defaults write " & flagspath & " View1Status " & ViewStatus
+                set ViewStatus to "1"
+                do shell script "defaults write " & flagspath & " View4Status " & ViewStatus
+            end if
+        else
+            set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Your version of OS X is not capable of transferring files from the Internet.", "OK", "", "", "Requires OS X 10.7 or later to download Apple Installers. Please update to OS X 10.7.")
+            myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
         end if
     end downloadAppleInstallersViewClicked_
     
@@ -731,7 +831,7 @@ script AppDelegate
         set selectedVolume to selectVolumePopUp0's titleOfSelectedItem() as text
         set selectedVolume to quoted form of selectedVolume
         
-        set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/openinstallercreatorflags.plist"
+        set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/openinstallcreatorflags.plist"
         do shell script "cp " & flagspath & " /tmp"
         
         set selectedVolume to (do shell script "echo " & selectedVolume & "| sed 's/ /\\\\ /g'")
@@ -745,12 +845,12 @@ script AppDelegate
         progressText0's setHidden_(true)
         continueButton0's setEnabled_(false)
         downloadAppleInstallersView's setHidden_(true)
+        progressBar0's setHidden_(true)
         
 	end applicationWillFinishLaunching_
 	
 	on applicationShouldTerminate_(sender)
 		-- Insert code here to do any housekeeping before your application quits
-        do shell script "rm /tmp/openinstallercreatorflags.plist"
 		return current application's NSTerminateNow
 	end applicationShouldTerminate_
 	

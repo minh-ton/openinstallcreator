@@ -14,11 +14,31 @@
 	<string>0</string>
 	<key>View4Status</key>
 	<string>0</string>
+	<key>CheckUpdateAtStartup</key>
+	<string>NO</string>
 	<key>CheckStructure</key>
 	<string>if [[ -e /tmp/InstallESD/BaseSystem.dmg ]]; then echo &quot;tmp&quot;; fi</string>
 	<key>CheckCurl</key>
 	<string>if [[ ! -f /opt/local/bin/curl || ! -f /opt/local/bin/curl ]]; then echo &quot;incompatible&quot;; fi</string>
-	<key>CheckDiskSize</key>
-	<string>| awk &apos;{printf(&quot;%s\n&quot;, $2)}&apos; | awk NR\&gt;1 | rev | cut -c 2- | rev</string>
+	<key>installerdownload</key>
+	<string>0</string>
+	<key>installerprep</key>
+	<string>0</string>
+	<key>installassistantauto</key>
+	<string>0</string>
+	<key>applediagnosticschunk</key>
+	<string>0</string>
+	<key>applediagnosticsdmg</key>
+	<string>0</string>
+	<key>basesystemchuck</key>
+	<string>0</string>
+	<key>basesystemdmg</key>
+	<string>0</string>
+	<key>installesd</key>
+	<string>0</string>
+	<key>installdmg</key>
+	<string>0</string>
+	<key>installpkg</key>
+	<string>0</string>
 </dict>
 </plist>

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011E75FA244E89C100B58093 /* openinstallcreatorhelperd.app in Resources */ = {isa = PBXBuildFile; fileRef = 011E75F9244E89C100B58093 /* openinstallcreatorhelperd.app */; };
+		01449873244EF00300885005 /* downloadosflags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01449872244EF00300885005 /* downloadosflags.plist */; };
 		014D8E70243867C000CDFC20 /* elcapitan.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 014D8E6F243867C000CDFC20 /* elcapitan.tiff */; };
 		0160047E244ABF7D0025D2BB /* createinstallfiles.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0160047D244ABF7D0025D2BB /* createinstallfiles.sh */; };
 		0169CE702449A35400B68E67 /* booticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE6F2449A35400B68E67 /* booticon.png */; };
-		0169CE722449AC0800B68E67 /* openinstallercreatorflags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */; };
+		0169CE722449AC0800B68E67 /* openinstallcreatorflags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE712449AC0800B68E67 /* openinstallcreatorflags.plist */; };
 		01770E51244AE720003C924C /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01770E4F244AE720003C924C /* About.xib */; };
 		01770E53244AE898003C924C /* imac27.png in Resources */ = {isa = PBXBuildFile; fileRef = 01770E52244AE897003C924C /* imac27.png */; };
 		01770E55244AECAB003C924C /* badge.png in Resources */ = {isa = PBXBuildFile; fileRef = 01770E54244AECAB003C924C /* badge.png */; };
@@ -23,17 +25,16 @@
 		01F7D9F924361C5C00729EE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F7D9F724361C5C00729EE0 /* MainMenu.xib */; };
 		01F7D9FC24361C5C00729EE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F7D9FB24361C5C00729EE0 /* main.m */; };
 		01F7DA07243630DD00729EE0 /* arrowbutton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 01F7DA06243630DD00729EE0 /* arrowbutton.tiff */; };
-		01F7DA09243630F300729EE0 /* cancel.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 01F7DA08243630F300729EE0 /* cancel.tiff */; };
-		01F7DA0B243630FF00729EE0 /* restart.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 01F7DA0A243630FF00729EE0 /* restart.tiff */; };
-		01F7DA0D243631EC00729EE0 /* Installer.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F7DA0C243631EC00729EE0 /* Installer.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		011E75F9244E89C100B58093 /* openinstallcreatorhelperd.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = openinstallcreatorhelperd.app; sourceTree = "<group>"; };
 		013B7EDB244DA1D60065F710 /* openinstallcreator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openinstallcreator.entitlements; sourceTree = "<group>"; };
+		01449872244EF00300885005 /* downloadosflags.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = downloadosflags.plist; sourceTree = "<group>"; };
 		014D8E6F243867C000CDFC20 /* elcapitan.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = elcapitan.tiff; sourceTree = "<group>"; };
 		0160047D244ABF7D0025D2BB /* createinstallfiles.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = createinstallfiles.sh; sourceTree = "<group>"; };
 		0169CE6F2449A35400B68E67 /* booticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = booticon.png; sourceTree = "<group>"; };
-		0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = openinstallercreatorflags.plist; sourceTree = "<group>"; };
+		0169CE712449AC0800B68E67 /* openinstallcreatorflags.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = openinstallcreatorflags.plist; sourceTree = "<group>"; };
 		01770E50244AE720003C924C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/About.xib; sourceTree = "<group>"; };
 		01770E52244AE897003C924C /* imac27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imac27.png; sourceTree = "<group>"; };
 		01770E54244AECAB003C924C /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge.png; sourceTree = "<group>"; };
@@ -48,9 +49,6 @@
 		01F7D9FB24361C5C00729EE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		01F7DA05243628C600729EE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		01F7DA06243630DD00729EE0 /* arrowbutton.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowbutton.tiff; sourceTree = "<group>"; };
-		01F7DA08243630F300729EE0 /* cancel.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = cancel.tiff; sourceTree = "<group>"; };
-		01F7DA0A243630FF00729EE0 /* restart.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = restart.tiff; sourceTree = "<group>"; };
-		01F7DA0C243631EC00729EE0 /* Installer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Installer.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				01F7DA06243630DD00729EE0 /* arrowbutton.tiff */,
-				01F7DA08243630F300729EE0 /* cancel.tiff */,
-				01F7DA0A243630FF00729EE0 /* restart.tiff */,
-				01F7DA0C243631EC00729EE0 /* Installer.png */,
 				01770E52244AE897003C924C /* imac27.png */,
 				014D8E6F243867C000CDFC20 /* elcapitan.tiff */,
 				01770E54244AECAB003C924C /* badge.png */,
@@ -89,9 +84,11 @@
 				01F7D9EE24361C5800729EE0 /* Products */,
 				01770E4E244AE56A003C924C /* Resources */,
 				01BB7EEC244BE65300F19CED /* volumeicon.bundle */,
-				0169CE712449AC0800B68E67 /* openinstallercreatorflags.plist */,
+				0169CE712449AC0800B68E67 /* openinstallcreatorflags.plist */,
+				01449872244EF00300885005 /* downloadosflags.plist */,
 				0160047D244ABF7D0025D2BB /* createinstallfiles.sh */,
 				01BB7EEA244BE62000F19CED /* pbzx */,
+				011E75F9244E89C100B58093 /* openinstallcreatorhelperd.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,16 +186,15 @@
 			files = (
 				01BB7EE9244B4C5700F19CED /* DownloadsFolder.icns in Resources */,
 				01770E53244AE898003C924C /* imac27.png in Resources */,
-				01F7DA0B243630FF00729EE0 /* restart.tiff in Resources */,
 				014D8E70243867C000CDFC20 /* elcapitan.tiff in Resources */,
 				01BB7EEB244BE62000F19CED /* pbzx in Resources */,
 				0169CE702449A35400B68E67 /* booticon.png in Resources */,
-				0169CE722449AC0800B68E67 /* openinstallercreatorflags.plist in Resources */,
-				01F7DA09243630F300729EE0 /* cancel.tiff in Resources */,
+				01449873244EF00300885005 /* downloadosflags.plist in Resources */,
+				0169CE722449AC0800B68E67 /* openinstallcreatorflags.plist in Resources */,
+				011E75FA244E89C100B58093 /* openinstallcreatorhelperd.app in Resources */,
 				0160047E244ABF7D0025D2BB /* createinstallfiles.sh in Resources */,
 				01770E51244AE720003C924C /* About.xib in Resources */,
 				01BB7EED244BE65300F19CED /* volumeicon.bundle in Resources */,
-				01F7DA0D243631EC00729EE0 /* Installer.png in Resources */,
 				01F7D9F624361C5C00729EE0 /* Assets.xcassets in Resources */,
 				01770E55244AECAB003C924C /* badge.png in Resources */,
 				01F7DA07243630DD00729EE0 /* arrowbutton.tiff in Resources */,
