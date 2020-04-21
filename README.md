@@ -11,7 +11,7 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 ## Download
 - Download latest version: [Download](https://github.com/Minh-Ton/openinstallcreator/releases) (beta 3)
 - Download source code: [Download](https://github.com/Minh-Ton/openinstallcreator/archive/master.zip) (beta 3)
-#### Cannot launch openinstallcreator.app? See [here](https://github.com/Minh-Ton/openinstallcreator/blob/master/README.md#cannot-launch-openinstallcreatorapp)
+<br><br> **Cannot launch openinstallcreator.app? See [here](https://github.com/Minh-Ton/openinstallcreator/blob/master/README.md#cannot-launch-openinstallcreatorapp)**
 
 ## Additional features
 - The utility will apply an icon base on the version of the installer to the created Bootable Installer to make it more identical in Boot Manager. 
