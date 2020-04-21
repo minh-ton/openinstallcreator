@@ -12,13 +12,6 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 - Download latest version: [Download](https://github.com/Minh-Ton/openinstallcreator/releases) (beta 3)
 - Download source code: [Download](https://github.com/Minh-Ton/openinstallcreator/archive/master.zip) (beta 3)
 
-## Cannot launch openinstallcreator.app? 
-1. Secondary click the app, and choose "Open".
-<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK1.png" width="400">
-
-2. A dialog will appear. Select "Open" again.
-<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK2.png" width="400"> 
-
 ## Additional features
 - The utility will apply an icon base on the version of the installer to the created Bootable Installer to make it more identical in Boot Manager. 
 *(Want to know how to apply an icon to your startup volume? Check out [VolumeIcon](https://github.com/Minh-Ton/VolumeIcon))*
@@ -36,3 +29,10 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 ## AppleScriptObj-C Limitations
 - When the app is running in the background, it won't show the GUI when clicked onto the Dock Icon. A workaround for this is to **_secondary click_** the openinstallcreator Dock Icon, then choose **_"Show All Window"_**.
 - While the app is doing some heavy tasks, such as `Create Bootable Installer` or `Download Apple Installer`, the *"spinning rainbow cursor"* will appeared when hovering the cursor on the application GUI. *(It's still doing it work though, just because there are so many tasks that's being added to the queue, making the queue banked up)*.
+
+## Cannot launch openinstallcreator.app? 
+1. Secondary click the app, and choose "Open".
+<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK1.png" width="400">
+
+2. A dialog will appear. Select "Open" again.
+<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK2.png" width="400"> 
