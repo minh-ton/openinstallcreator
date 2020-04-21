@@ -32,8 +32,8 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 - While the app is doing some heavy tasks, such as `Create Bootable Installer` or `Download Apple Installer`, the *"spinning rainbow cursor"* will appeared when hovering the cursor on the application GUI. *(It's still doing it work though, just because there are so many tasks that's being added to the queue, making the queue banked up)*.
 
 ## Cannot launch openinstallcreator.app? 
-1. Secondary click the app, and choose "Open".
+***1. Secondary click the app, and choose "Open".***
 <img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK1.png">
 
-2. A dialog will appear. Select "Open" again.
+***2. A dialog will appear. Select "Open" again.***
 <img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK2.png"> 
