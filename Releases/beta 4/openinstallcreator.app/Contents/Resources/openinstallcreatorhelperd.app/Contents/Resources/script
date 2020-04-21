@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while [ 1 ]
+if ! pgrep -x "openinstallcreator" > /dev/null
+then
+	rm /tmp/openinstallcreatorflags.plist
+   	rm -R /tmp/Install*
+	rm /tmp/pbzx
+fi
+done

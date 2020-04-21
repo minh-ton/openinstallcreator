@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>installerdownload</key>
+	<string>0</string>
+	<key>installerprep</key>
+	<string>0</string>
+	<key>installassistantauto</key>
+	<string>0</string>
+	<key>applediagnosticschunk</key>
+	<string>0</string>
+	<key>applediagnosticsdmg</key>
+	<string>0</string>
+	<key>basesystemchuck</key>
+	<string>0</string>
+	<key>basesystemdmg</key>
+	<string>0</string>
+	<key>installesd</key>
+	<string>0</string>
+	<key>installdmg</key>
+	<string>0</string>
+	<key>installpkg</key>
+	<string>0</string>
+</dict>
+</plist>
