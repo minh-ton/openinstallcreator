@@ -1,3 +1,3 @@
 #!/bin/bash
 
-download_link=download_link=abc
+download_link="unavailable"
