@@ -1,3 +1,3 @@
 #!/bin/bash
 
-download_link="unavailable"
+echo "https://github.com/Minh-Ton/openinstallcreator/releases/download/beta4/release.zip"
