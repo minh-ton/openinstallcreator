@@ -9,9 +9,7 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 - Bootable USB/Disk size: ***At least 8GB for OS X 10.9 to macOS 10.14; 10GB for macOS 10.15 Catalina.***
 
 ## Download
-- Download latest version: [Download](https://github.com/Minh-Ton/openinstallcreator/releases/download/beta4/openinstallcreator.dmg) (beta 4)
-- Download source code: [Download](https://github.com/Minh-Ton/openinstallcreator/archive/master.zip) (beta 4)
-<br><br> **Cannot launch openinstallcreator.app? See [here](https://github.com/Minh-Ton/openinstallcreator#cannot-launch-openinstallcreatorapp)**
+[![button](https://github.com/Minh-Ton/openinstallcreator/raw/master/Screenshots/download.png)](https://github.com/Minh-Ton/openinstallcreator/releases/download/beta4/openinstallcreator.dmg)
 
 ## Screenshots (beta 3)
 
