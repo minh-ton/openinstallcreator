@@ -14,8 +14,29 @@ int main(int argc, const char * argv[]) {
     return NSApplicationMain(argc, argv);
 }
 
-
 /*
+ 
+---------------------------------------------------------
+ 
+// LIST OF ERROR CODES THAT YOU MAY ENCOUNTER...
+
+// Error code 1: <Not available>
+// Error code 2: Installer Verification failed
+// Error code 3: Installer not specified
+// Error code 4: Installer save path not specified
+// Error code 5: Destination folder is not writable
+// Error code 6: Prepare resources failed
+// Error code 7: Could not get Installer Download URLs
+// Error code 8: Could not download Installer files
+// Error code 9: Could not prepare Installer
+// Error code 10: Could not mount/unmount disk image
+
+
+----------------------------------------------------------
+
+*/
+ 
+/* PROJECT LICENSE
 
 GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007

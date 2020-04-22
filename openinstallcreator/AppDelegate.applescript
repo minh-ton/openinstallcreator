@@ -403,6 +403,9 @@ script AppDelegate
                 if i = 2 then
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("No Internet Connection.", "OK", "", "", "Please connect to the Internet to download the Installer.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end if
             end try
@@ -418,6 +421,9 @@ script AppDelegate
             on error
             set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Failed to prepare resources.", "OK", "Error code: 6", "", "Couldn't copy file to temporary folder.")
             myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+            progressText1's setHidden_(true)
+            progressBar1's setHidden_(true)
+            statusText1's setStringValue:"Error! Please relauch the app to retry."
             error number -128
         end try
         
@@ -464,6 +470,9 @@ script AppDelegate
         on error
         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Failed to prepare Catalog file.", "OK", "Error code: 7", "", "Couldn't get download URLs ready.")
         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+        progressText1's setHidden_(true)
+        progressBar1's setHidden_(true)
+        statusText1's setStringValue:"Error! Please relauch the app to retry."
         error number -128
         end try
     
@@ -498,6 +507,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download InstallAssistantAuto.pkg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " installassistantauto 1"
@@ -512,6 +524,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download AppleDiagnostics.chunklist", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " applediagnosticschunk 1"
@@ -526,6 +541,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download AppleDiagnostics.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " applediagnosticsdmg 1"
@@ -540,6 +558,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download BaseSystem.chunklist", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " basesystemchuck 1"
@@ -555,6 +576,9 @@ script AppDelegate
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download BaseSystem.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        progressText1's setHidden_(true)
+                        progressBar1's setHidden_(true)
+                        statusText1's setStringValue:"Error! Please relauch the app to retry."
                         error number -128
                     end try
                 end timeout
@@ -571,6 +595,9 @@ script AppDelegate
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download InstallESD.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        progressText1's setHidden_(true)
+                        progressBar1's setHidden_(true)
+                        statusText1's setStringValue:"Error! Please relauch the app to retry."
                         error number -128
                     end try
                 end timeout
@@ -587,6 +614,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Failed to extract Installer Files from downloaded Packages.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " installassistantauto 2"
@@ -601,6 +631,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't extract Installer Files from downloaded Packages.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " installassistantauto 3"
@@ -615,6 +648,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy AppleDiagnostics.chunklist to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " applediagnosticschunk 3"
@@ -629,6 +665,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy AppleDiagnostics.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " applediagnosticsdmg 3"
@@ -643,6 +682,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy BaseSystem.chunklist to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " basesystemchuck 3"
@@ -658,6 +700,9 @@ script AppDelegate
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy BaseSystem.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        progressText1's setHidden_(true)
+                        progressBar1's setHidden_(true)
+                        statusText1's setStringValue:"Error! Please relauch the app to retry."
                         error number -128
                     end try
                 end timeout
@@ -675,6 +720,9 @@ script AppDelegate
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy InstallESD.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
                         error number -128
+                        progressText1's setHidden_(true)
+                        progressBar1's setHidden_(true)
+                        statusText1's setStringValue:"Error! Please relauch the app to retry."
                     end try
                 end timeout
                 do shell script "defaults write " & flagspath & " installesd 3"
@@ -695,6 +743,9 @@ script AppDelegate
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download InstallOS.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        progressText1's setHidden_(true)
+                        progressBar1's setHidden_(true)
+                        statusText1's setStringValue:"Error! Please relauch the app to retry."
                         error number -128
                     end try
                 end timeout
@@ -710,6 +761,9 @@ script AppDelegate
                 on error
                 set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't mount InstallOS.dmg", "OK", "Error code: 10", "", "Check your Available disk space.")
                 myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                progressText1's setHidden_(true)
+                progressBar1's setHidden_(true)
+                statusText1's setStringValue:"Error! Please relauch the app to retry."
                 error number -128
             end try
             
@@ -726,6 +780,9 @@ script AppDelegate
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't expand Installer Packages.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                    progressText1's setHidden_(true)
+                    progressBar1's setHidden_(true)
+                    statusText1's setStringValue:"Error! Please relauch the app to retry."
                     error number -128
                 end try
                 do shell script "defaults write " & flagspath & " installpkg 1"
@@ -741,6 +798,9 @@ script AppDelegate
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy InstallESD.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                        progressText1's setHidden_(true)
+                        progressBar1's setHidden_(true)
+                        statusText1's setStringValue:"Error! Please relauch the app to retry."
                         error number -128
                     end try
                 end timeout
@@ -755,6 +815,9 @@ script AppDelegate
                 on error
                 set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't unmount InstallOS.dmg.", "OK", "Error code: 10", "", "Check your Available disk space.")
                 myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
+                progressText1's setHidden_(true)
+                progressBar1's setHidden_(true)
+                statusText1's setStringValue:"Error! Please relauch the app to retry."
                 error number -128
             end try
         end if

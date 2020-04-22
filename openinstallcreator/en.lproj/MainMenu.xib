@@ -66,8 +66,39 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Options" id="SEw-XJ-TTH">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Options" id="4as-u2-X9J">
+                        <items>
+                            <menuItem title="Download OS X 10.6" id="l8I-NQ-YdI">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="newDocument:" target="-1" id="8F5-Jd-ddB"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Download OS X 10.7" id="h1O-B5-h9f">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openDocument:" target="-1" id="dMx-Jd-eoy"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Download OS X 10.8" id="aEd-DM-bgK">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="vnJ-3q-ObA"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Download OS X 10.9" id="87c-uc-ywF">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="saveDocument:" target="-1" id="Taa-op-4vS"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
             </items>
-            <point key="canvasLocation" x="157" y="-456"/>
+            <point key="canvasLocation" x="20" y="-523"/>
         </menu>
         <window title="openinstallcreator" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
