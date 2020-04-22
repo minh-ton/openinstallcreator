@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "beta 6"
+echo "beta6"
