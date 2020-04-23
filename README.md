@@ -1,14 +1,11 @@
+<img align="right" width="30%" src="Source%20code/Resources/imac27.png">
+
 # [openinstallcreator beta](https://github.com/Minh-Ton/openinstallcreator)
 An open-source AppleScriptObj-C application allows you to make a bootable macOS/OS X Installer... and more.
 
 <p>
 
 [<img src="Screenshots/download.png">](https://github.com/Minh-Ton/openinstallcreator/releases/download/beta5/openinstallcreator.dmg)
-
-</p>
-<p>
-  
-<img src="https://github.com/Minh-Ton/openinstallcreator/raw/master/Source%20code/Resources/imac27.png" width="256"> 
 
 </p>
 
