@@ -6,9 +6,9 @@
 #  Created by Ford on 4/18/20.
 #  Copyright © 2020 MinhTon. All rights reserved.
 
-installer_version_short=$(cat /tmp/installer_version_short)
-installer_volume_path=$(cat /tmp/installer_volume_path)
-installer_application_name=$(cat /tmp/installer_application_name)
+installer_version_short=$(cat ~/openinstallcreator/installer_version_short)
+installer_volume_path=$(cat ~/openinstallcreator/installer_volume_path)
+installer_application_name=$(cat ~/openinstallcreator/installer_application_name)
 
 if [[ $installer_version_short == "10.9." || $installer_version_short == "10.10" ]]; then
 echo "<?xml version="1.0" encoding="UTF-8"?>

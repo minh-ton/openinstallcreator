@@ -44,7 +44,7 @@ script AppDelegate
     on SelectVolumePopUp0Clicked_(sender)
         set selectedVolume to selectVolumePopUp0's titleOfSelectedItem() as text
         set selectedVolume to (do shell script "echo " & selectedVolume & "| sed 's/ /\\\\ /g'")
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         do shell script "defaults write " & flagspath & " SelectedVolume " & selectedVolume
     end SelectVolumePopUpClicked_
     
@@ -54,7 +54,7 @@ script AppDelegate
         statusText0's setStringValue:"Now, please select the I'm ready button to continue."
         set InstallerPath to (do shell script "echo " & InstallerPath & "| sed 's/ /\\\\ /g'")
         
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         do shell script "defaults write " & flagspath & " InstallerPath " & InstallerPath
         
         set valid to (do shell script "defaults read " & InstallerPath & "Contents/Info.plist CFBundleIconFile")
@@ -66,7 +66,7 @@ script AppDelegate
     end selectInstallerButton0Clicked_
     
     on readybutton0Clicked_(sender)
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         set InstallerPath to (do shell script "defaults read " & flagspath & " InstallerPath")
         if InstallerPath = "unavailable" then
             set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Have you selected an Apple Installer?", "OK", "Error code: 3", "", "Oops... Seems like you forgot to choose an Installer.")
@@ -81,7 +81,7 @@ script AppDelegate
     end readybutton0Clicked_
     
     on continueButton0Clicked_(sender)
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         set InstallerPath to (do shell script "defaults read " & flagspath & " InstallerPath")
         set OriginalInstallerPath to InstallerPath
         set InstallerPath to (do shell script "echo " & InstallerPath & "| sed 's/ /\\\\ /g' | rev | cut -c 2- | rev")
@@ -101,7 +101,7 @@ script AppDelegate
                         -- FOURTH VIEW - DOWNLOAD APPLE INSTALLERS --
     
     on selectOSVersionPopUpClicked_(sender)
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         set SelectedOSVersion to ((selectOSVersionPopUp's indexOfSelectedItem()) as string) as integer
         do shell script "defaults write " & flagspath & " SelectedOSVersion " & SelectedOSVersion
     end selectOSVersionPopUpClicked_
@@ -115,14 +115,14 @@ script AppDelegate
             set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Destination is not writable.", "OK", "Error code: 5", "", "Please choose a writable destination folder to save the Apple Installer later.")
             myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
         else if writable = "0" then
-            set flagspath to "/tmp/openinstallcreatorflags.plist"
+            set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
             do shell script "defaults write " & flagspath & " SavePath " & SavePath
             statusText1's setStringValue:"Now, please select the I'm ready button to continue."
         end if
     end browseSaveFolderClicked_
     
     on readybutton1Clicked_(sender)
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         set SavePath to (do shell script "defaults read " & flagspath & " SavePath")
         if SavePath = "unavailable" then
             set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("No destination folder has been specified.", "OK", "Error code: 4", "", "Try to click the Folder Icon and browse for a folder to save the macOS/OS X Installer.")
@@ -167,11 +167,11 @@ script AppDelegate
         -- Check installer structure
         progressText0's setStringValue: "Step 3 of 11: Checking Installer Structure..."
         delay 3
-        do shell script "hdiutil attach " & Installer_SharedSupport_Path & "/InstallESD.dmg -mountpoint /tmp/InstallESD -nobrowse" with administrator privileges
+        do shell script "hdiutil attach " & Installer_SharedSupport_Path & "/InstallESD.dmg -mountpoint ~/openinstallcreator/InstallESD -nobrowse" with administrator privileges
         set CheckStructure to (do shell script "defaults read " & flagspath & " CheckStructure")
         set StructureReturned to (do shell script CheckStructure)
         if StructureReturned = "tmp" then
-            set Installer_Image_Path to "/tmp/InstallESD"
+            set Installer_Image_Path to "~/openinstallcreator/InstallESD"
         else
             set Installer_Image_Path to Installer_SharedSupport_Path
         end if
@@ -180,14 +180,14 @@ script AppDelegate
         -- Mount BaseSystem.dmg
         progressText0's setStringValue: "Step 4 of 11: Mounting BaseSystem.dmg"
         delay 3
-        do shell script "hdiutil attach " & Installer_Image_Path & "/BaseSystem.dmg -mountpoint /tmp/Base\\ System -nobrowse" with administrator privileges
+        do shell script "hdiutil attach " & Installer_Image_Path & "/BaseSystem.dmg -mountpoint ~/openinstallcreator/Base\\ System -nobrowse" with administrator privileges
         tell progressBar0 to setDoubleValue:20
 
         -- Check installer version
         progressText0's setStringValue: "Step 5 of 11: Reading Installer Version..."
         delay 3
-        set Installer_Version to (do shell script "defaults read /tmp/Base\\ System/System/Library/CoreServices/SystemVersion.plist ProductVersion")
-        set Installer_Version_Short to (do shell script "defaults read /tmp/Base\\ System/System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5")
+        set Installer_Version to (do shell script "defaults read ~/openinstallcreator/Base\\ System/System/Library/CoreServices/SystemVersion.plist ProductVersion")
+        set Installer_Version_Short to (do shell script "defaults read ~/openinstallcreator/Base\\ System/System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5")
         tell progressBar0 to setDoubleValue:25
         
         -- Erase Installer Volume
@@ -231,55 +231,55 @@ script AppDelegate
         end timeout
         
         if Installer_Version_Short is in {"10.9.", "10.10", "10.11", "10.12"} then
-            do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/boot.efi" & " " & Installer_Volume_Path & "/.IABootFiles" with administrator privileges
-            do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/PlatformSupport.plist" & " " & Installer_Volume_Path & "/.IABootFiles" with administrator privileges
-            do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/SystemVersion.plist" & " " & Installer_Volume_Path & "/.IABootFilesSystemVersion.plist" with administrator privileges
-            do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/boot.efi" & " " & Installer_Volume_Path & "/usr/standalone/i386" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/boot.efi" & " " & Installer_Volume_Path & "/.IABootFiles" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/PlatformSupport.plist" & " " & Installer_Volume_Path & "/.IABootFiles" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/SystemVersion.plist" & " " & Installer_Volume_Path & "/.IABootFilesSystemVersion.plist" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/boot.efi" & " " & Installer_Volume_Path & "/usr/standalone/i386" with administrator privileges
         end if
         delay 1
         tell progressBar0 to setDoubleValue:58
         
         if Installer_Version_Short is in {"10.9.", "10.10"} then
-            do shell script "cp /tmp/Base\\ System/System/Library/Caches/com.apple.kext.caches/Startup/kernelcache" & " " & Installer_Volume_Path & "/System/Library/Caches/com.apple.kext.caches/Startup" with administrator privileges
-            do shell script "cp /tmp/Base\\ System/System/Library/Caches/com.apple.kext.caches/Startup/kernelcache" & " " & Installer_Volume_Path & "/.IABootFiles" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/Caches/com.apple.kext.caches/Startup/kernelcache" & " " & Installer_Volume_Path & "/System/Library/Caches/com.apple.kext.caches/Startup" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/Caches/com.apple.kext.caches/Startup/kernelcache" & " " & Installer_Volume_Path & "/.IABootFiles" with administrator privileges
         end if
         delay 1
         tell progressBar0 to setDoubleValue:60
         
         if Installer_Version_Short is in {"10.11", "10.12"} then
-            do shell script "cp /tmp/Base\\ System/System/Library/PrelinkedKernels/prelinkedkernel" & " " & Installer_Volume_Path & "/.IABootFiles" with administrator privileges
-            do shell script "cp /tmp/Base\\ System/System/Library/PrelinkedKernels/prelinkedkernel" & " " & Installer_Volume_Path & "/System/Library/PrelinkedKernels" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/PrelinkedKernels/prelinkedkernel" & " " & Installer_Volume_Path & "/.IABootFiles" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/PrelinkedKernels/prelinkedkernel" & " " & Installer_Volume_Path & "/System/Library/PrelinkedKernels" with administrator privileges
         end if
         delay 1
         tell progressBar0 to setDoubleValue:63
         
         if Installer_Version_Short is in {"10.13", "10.14", "10.15"} then
-            do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/boot.efi*" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
-            do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/bootbase.efi*" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
-            do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/BridgeVersion.bin" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
-            do shell script "cp /tmp/Base\\ System/System/Library/PrelinkedKernels/prelinkedkernel" & " " & Installer_Volume_Path & "/System/Library/PrelinkedKernels" with administrator privileges
-            do shell script "cp /tmp/Base\\ System/System/Library/PrelinkedKernels/immutablekernel*" & " " & Installer_Volume_Path & "/System/Library/PrelinkedKernels" with administrator privileges
-            do shell script "cp -R /tmp/Base\\ System/usr/standalone/i386/SecureBoot.bundle" & " " & Installer_Volume_Path & "/usr/standalone/i386" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/boot.efi*" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/bootbase.efi*" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/BridgeVersion.bin" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/PrelinkedKernels/prelinkedkernel" & " " & Installer_Volume_Path & "/System/Library/PrelinkedKernels" with administrator privileges
+            do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/PrelinkedKernels/immutablekernel*" & " " & Installer_Volume_Path & "/System/Library/PrelinkedKernels" with administrator privileges
+            do shell script "cp -R ~/openinstallcreator/Base\\ System/usr/standalone/i386/SecureBoot.bundle" & " " & Installer_Volume_Path & "/usr/standalone/i386" with administrator privileges
         end if
         delay 1
         tell progressBar0 to setDoubleValue:65
         
-        do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/boot.efi" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
-        do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/PlatformSupport.plist" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
-        do shell script "cp /tmp/Base\\ System/System/Library/CoreServices/SystemVersion.plist" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
+        do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/boot.efi" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
+        do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/PlatformSupport.plist" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
+        do shell script "cp ~/openinstallcreator/Base\\ System/System/Library/CoreServices/SystemVersion.plist" & " " & Installer_Volume_Path & "/System/Library/CoreServices" with administrator privileges
         delay 1
         tell progressBar0 to setDoubleValue:70
         
         -- Create Installer Files
         progressText0's setStringValue: "Step 9 of 11: Creating Installer Boot Files..."
         delay 3
-        do shell script "echo " & Installer_Version_Short & " >> /tmp/installer_version_short" with administrator privileges
-        do shell script "echo " & Installer_App_Name & " >> /tmp/installer_application_name" with administrator privileges
-        do shell script "echo " & Installer_Volume_Path & " >> /tmp/installer_volume_path" with administrator privileges
+        do shell script "echo " & Installer_Version_Short & " >> ~/openinstallcreator/installer_version_short" with administrator privileges
+        do shell script "echo " & Installer_App_Name & " >> ~/openinstallcreator/installer_application_name" with administrator privileges
+        do shell script "echo " & Installer_Volume_Path & " >> ~/openinstallcreator/installer_volume_path" with administrator privileges
         set createinstallfilessh to POSIX path of (path to current application as text) & "Contents/Resources/createinstallfiles.sh"
         do shell script "chmod +x " & createinstallfilessh with administrator privileges
         do shell script createinstallfilessh with administrator privileges
-        do shell script "rm /tmp/installer*" with administrator privileges
+        do shell script "rm ~/openinstallcreator/installer*" with administrator privileges
         tell progressBar0 to setDoubleValue:75
         
             
@@ -333,8 +333,8 @@ script AppDelegate
         
         -- Unmount disk images
         progressText0's setStringValue: "Step 11 of 11: Unmounting Disk Images..."
-        do shell script "hdiutil detach /tmp/Base\\ System" with administrator privileges
-        do shell script "hdiutil detach /tmp/InstallESD" with administrator privileges
+        do shell script "hdiutil detach ~/openinstallcreator/Base\\ System" with administrator privileges
+        do shell script "hdiutil detach ~/openinstallcreator/InstallESD" with administrator privileges
         
         
         tell progressBar0 to setDoubleValue:100
@@ -355,7 +355,7 @@ script AppDelegate
         progressText1's setHidden_(false)
         set helperApp to POSIX path of (path to current application as text) & "Contents/Resources/openinstallcreatorhelper.app"
         
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         -- set installerdownload to (do shell script "defaults read " & flagspath & " installerdownload")
         -- set installerprep to (do shell script "defaults read " & flagspath & " installerprep")
         
@@ -376,7 +376,7 @@ script AppDelegate
         if Volume_Version_Short = "10.7." then
             progressText1's setStringValue: "Checking Curl Version..."
             delay 3
-            set CheckCurl to (do shell script "defaults read /tmp/openinstallcreatorflags.plist CheckCurl")
+            set CheckCurl to (do shell script "defaults read ~/openinstallcreator/openinstallcreatorflags.plist CheckCurl")
             set CurlCompatibility to (do shell script CheckCurl)
             if CurlCompatibility = "incompatible" then
                 set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Curl version check failed.", "OK", "", "", "This version of OS X requires Xcode Command Line Tools, MacPorts, and curl updates to be manually installed.")
@@ -417,8 +417,8 @@ script AppDelegate
         delay 3
         set pbzx to POSIX path of (path to current application as text) & "Contents/Resources/pbzx"
         try
-            do shell script "cp " & pbzx & " /tmp"
-            do shell script "chmod +x /tmp/pbzx"
+            do shell script "cp " & pbzx & " ~/openinstallcreator"
+            do shell script "chmod +x ~/openinstallcreator/pbzx"
             on error
             set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Failed to prepare resources.", "OK", "Error code: 6", "", "Couldn't copy file to temporary folder.")
             myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -478,16 +478,16 @@ script AppDelegate
         end try
     
         delay 3
-        do shell script "mkdir -p /tmp/" & (quoted form of Installer_Name)
+        do shell script "mkdir -p ~/openinstallcreator/" & (quoted form of Installer_Name)
         
         -- Download & Prepare Installer
         progressText1's setStringValue: "Downloading Installer..."
         delay 3
         
         set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/downloadosflags.plist"
-        do shell script "rsync -a -v --ignore-existing " & flagspath & " " & "/tmp/" & (quoted form of Installer_Name) & "/"
+        do shell script "rsync -a -v --ignore-existing " & flagspath & " " & "~/openinstallcreator/" & (quoted form of Installer_Name) & "/"
         
-        set flagspath to "/tmp/" & (quoted form of Installer_Name) & "/downloadosflags.plist"
+        set flagspath to "~/openinstallcreator/" & (quoted form of Installer_Name) & "/downloadosflags.plist"
         set installassistantauto to (do shell script "defaults read " & flagspath & " installassistantauto")
         set applediagnosticschunk to (do shell script "defaults read " & flagspath & " applediagnosticschunk")
         set applediagnosticsdmg to (do shell script "defaults read " & flagspath & " applediagnosticsdmg")
@@ -499,15 +499,15 @@ script AppDelegate
         
         if InstallerVer is in {"10.13", "10.14", "10.15"} then
             
-            do shell script "touch /tmp/download.log"
-            do shell script "open /tmp/download.log"
+            do shell script "touch ~/openinstallcreator/download.log"
+            do shell script "open ~/openinstallcreator/download.log"
 
             -- Download InstallAssistantAuto.pkg
             if not (installassistantauto = "1") then
                 try
                     progressText1's setStringValue: "Downloading InstallAssistantAuto.pkg..."
                     delay 3
-                    do shell script Curl & " -o /tmp/" & (quoted form of Installer_Name) & "/InstallAssistantAuto.pkg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/InstallAssistantAuto.pkg >> /tmp/download.log 2>&1"
+                    do shell script Curl & " -o ~/openinstallcreator/" & (quoted form of Installer_Name) & "/InstallAssistantAuto.pkg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/InstallAssistantAuto.pkg >> ~/openinstallcreator/download.log 2>&1"
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download InstallAssistantAuto.pkg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -524,7 +524,7 @@ script AppDelegate
                 try
                     progressText1's setStringValue: "Downloading AppleDiagnostics.chunklist..."
                     delay 3
-                    do shell script Curl & " -o /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.chunklist http://swcdn.apple.com/content/downloads/" & Installer_URL & "/AppleDiagnostics.chunklist >> /tmp/download.log 2>&1"
+                    do shell script Curl & " -o ~/openinstallcreator/" & (quoted form of Installer_Name) & "/AppleDiagnostics.chunklist http://swcdn.apple.com/content/downloads/" & Installer_URL & "/AppleDiagnostics.chunklist >> ~/openinstallcreator/download.log 2>&1"
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download AppleDiagnostics.chunklist", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -541,7 +541,7 @@ script AppDelegate
                 try
                     progressText1's setStringValue: "Downloading AppleDiagnostics.dmg..."
                     delay 3
-                    do shell script Curl & " -o /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/AppleDiagnostics.dmg >> /tmp/download.log 2>&1"
+                    do shell script Curl & " -o ~/openinstallcreator/" & (quoted form of Installer_Name) & "/AppleDiagnostics.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/AppleDiagnostics.dmg >> ~/openinstallcreator/download.log 2>&1"
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download AppleDiagnostics.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -558,7 +558,7 @@ script AppDelegate
                 try
                     progressText1's setStringValue: "Downloading BaseSystem.chunklist..."
                     delay 3
-                    do shell script Curl & " -o /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.chunklist http://swcdn.apple.com/content/downloads/" & Installer_URL & "/BaseSystem.chunklist >> /tmp/download.log 2>&1"
+                    do shell script Curl & " -o ~/openinstallcreator/" & (quoted form of Installer_Name) & "/BaseSystem.chunklist http://swcdn.apple.com/content/downloads/" & Installer_URL & "/BaseSystem.chunklist >> ~/openinstallcreator/download.log 2>&1"
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download BaseSystem.chunklist", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -577,7 +577,7 @@ script AppDelegate
                     try
                         progressText1's setStringValue: "Downloading BaseSystem.dmg..."
                         delay 3
-                        do shell script Curl & " -o /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/BaseSystem.dmg >> /tmp/download.log 2>&1"
+                        do shell script Curl & " -o ~/openinstallcreator/" & (quoted form of Installer_Name) & "/BaseSystem.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/BaseSystem.dmg >> ~/openinstallcreator/download.log 2>&1"
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download BaseSystem.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -596,7 +596,7 @@ script AppDelegate
                 with timeout of 86400 seconds
                     try
                         delay 3
-                        do shell script Curl & " -o /tmp/" & (quoted form of Installer_Name) & "/InstallESD.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/InstallESDDmg.pkg >> /tmp/download.log 2>&1"
+                        do shell script Curl & " -o ~/openinstallcreator/" & (quoted form of Installer_Name) & "/InstallESD.dmg http://swcdn.apple.com/content/downloads/" & Installer_URL & "/InstallESDDmg.pkg >> ~/openinstallcreator/download.log 2>&1"
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download InstallESD.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -607,7 +607,7 @@ script AppDelegate
                     end try
                 end timeout
                 do shell script "defaults write " & flagspath & " installesd 1"
-                do shell script "rm /tmp/download.log"
+                do shell script "rm ~/openinstallcreator/download.log"
             end if
             
             -- Prepare Installer
@@ -616,7 +616,7 @@ script AppDelegate
             if not (installassistantauto = "2") then
                 try
                     delay 3
-                    do shell script "cd /tmp/" & (quoted form of Installer_Name) & " && /tmp/pbzx /tmp/" & (quoted form of Installer_Name) & "/InstallAssistantAuto.pkg | cpio -i"
+                    do shell script "cd ~/openinstallcreator/" & (quoted form of Installer_Name) & " && ~/openinstallcreator/pbzx ~/openinstallcreator/" & (quoted form of Installer_Name) & "/InstallAssistantAuto.pkg | cpio -i"
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Failed to extract Installer Files from downloaded Packages.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -633,7 +633,7 @@ script AppDelegate
             if not (installassistantauto = "3") then
                 try
                     delay 3
-                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name) & ".app " & SavePath
+                    do shell script "mv ~/openinstallcreator/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name) & ".app " & SavePath
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't extract Installer Files from downloaded Packages.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -650,7 +650,7 @@ script AppDelegate
             if not (applediagnosticschunk = "3") then
                 try
                     delay 3
-                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.chunklist " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                    do shell script "mv ~/openinstallcreator/" & (quoted form of Installer_Name) & "/AppleDiagnostics.chunklist " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy AppleDiagnostics.chunklist to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -667,7 +667,7 @@ script AppDelegate
             if not (applediagnosticsdmg = "3") then
                 try
                     delay 3
-                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/AppleDiagnostics.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                    do shell script "mv ~/openinstallcreator/" & (quoted form of Installer_Name) & "/AppleDiagnostics.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy AppleDiagnostics.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -684,7 +684,7 @@ script AppDelegate
             if not (basesystemchuck = "3") then
                 try
                     delay 3
-                    do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.chunklist " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                    do shell script "mv ~/openinstallcreator/" & (quoted form of Installer_Name) & "/BaseSystem.chunklist " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy BaseSystem.chunklist to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -702,7 +702,7 @@ script AppDelegate
                 with timeout of 86400 seconds
                     try
                         delay 3
-                        do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/BaseSystem.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                        do shell script "mv ~/openinstallcreator/" & (quoted form of Installer_Name) & "/BaseSystem.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy BaseSystem.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -721,7 +721,7 @@ script AppDelegate
                 with timeout of 86400 seconds
                     try
                         delay 3
-                        do shell script "mv /tmp/" & (quoted form of Installer_Name) & "/InstallESD.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
+                        do shell script "mv ~/openinstallcreator/" & (quoted form of Installer_Name) & "/InstallESD.dmg " & SavePath & "/" & (quoted form of Installer_Name) & ".app/Contents/SharedSupport"
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy InstallESD.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -738,8 +738,8 @@ script AppDelegate
 
         if InstallerVer is in {"10.12", "10.11", "10.10"} then
             
-            do shell script "touch /tmp/download.log"
-            do shell script "open /tmp/download.log"
+            do shell script "touch ~/openinstallcreator/download.log"
+            do shell script "open ~/openinstallcreator/download.log"
             
             -- Download InstallOS.dmg
             progressText1's setStringValue: "Downloading InstallOS.dmg..."
@@ -748,7 +748,7 @@ script AppDelegate
                 with timeout of 86400 seconds
                     try
                         delay 3
-                        do shell script Curl & " -o /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name & ".dmg") & " " & Installer_URL & " >> /tmp/download.log 2>&1"
+                        do shell script Curl & " -o ~/openinstallcreator/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name & ".dmg") & " " & Installer_URL & " >> ~/openinstallcreator/download.log 2>&1"
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't download InstallOS.dmg", "OK", "Error code: 8", "", "Check your Internet Connection and/or Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -762,14 +762,14 @@ script AppDelegate
             end if
 
 
-            do shell script "rm /tmp/download.log"
+            do shell script "rm ~/openinstallcreator/download.log"
 
             -- Prepare Installer
             progressText1's setStringValue: "Mounting Disk Image..."
 
             delay 3
             try
-                do shell script "hdiutil attach /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name & ".dmg") & " -mountpoint /tmp/" & (quoted form of Installer_Name & "_dmg") & " -nobrowse"
+                do shell script "hdiutil attach ~/openinstallcreator/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_Name & ".dmg") & " -mountpoint ~/openinstallcreator/" & (quoted form of Installer_Name & "_dmg") & " -nobrowse"
                 on error
                 set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't mount InstallOS.dmg", "OK", "Error code: 10", "", "Check your Available disk space.")
                 myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -779,7 +779,7 @@ script AppDelegate
                 error number -128
             end try
             
-            set Installer_PKG to (do shell script "ls /tmp/" & (quoted form of Installer_Name & "_dmg"))
+            set Installer_PKG to (do shell script "ls ~/openinstallcreator/" & (quoted form of Installer_Name & "_dmg"))
             set Installer_PKG_Partial to (do shell script "echo " & (quoted form of Installer_PKG) & " | cut -f1 -d.")
             
             progressText1's setStringValue: "Expanding Packages..."
@@ -787,8 +787,8 @@ script AppDelegate
             if not (installpkg = "1") then
                 try
                     delay 3
-                    do shell script "pkgutil --expand /tmp/" & (quoted form of Installer_Name & "_dmg") & "/" & (quoted form of Installer_PKG) & " /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_PKG_Partial)
-                    do shell script "tar -xf /tmp/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_PKG_Partial) & "/" & (quoted form of Installer_PKG) & "/Payload -C " & SavePath
+                    do shell script "pkgutil --expand ~/openinstallcreator/" & (quoted form of Installer_Name & "_dmg") & "/" & (quoted form of Installer_PKG) & " ~/openinstallcreator/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_PKG_Partial)
+                    do shell script "tar -xf ~/openinstallcreator/" & (quoted form of Installer_Name) & "/" & (quoted form of Installer_PKG_Partial) & "/" & (quoted form of Installer_PKG) & "/Payload -C " & SavePath
                     on error
                     set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't expand Installer Packages.", "OK", "Error code: 9", "", "Check your Available disk space.")
                     myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -806,7 +806,7 @@ script AppDelegate
                 with timeout of 86400 seconds
                     try
                         delay 3
-                        do shell script "cp /tmp/" & (quoted form of Installer_Name & "_dmg") & "/" & (quoted form of Installer_PKG) & " " & SavePath & "/" & (quoted form of Installer_Name & ".app") & "/Contents/SharedSupport/InstallESD.dmg"
+                        do shell script "cp ~/openinstallcreator/" & (quoted form of Installer_Name & "_dmg") & "/" & (quoted form of Installer_PKG) & " " & SavePath & "/" & (quoted form of Installer_Name & ".app") & "/Contents/SharedSupport/InstallESD.dmg"
                         on error
                         set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't copy InstallESD.dmg to Destination.", "OK", "Error code: 9", "", "Check your Available disk space.")
                         myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -823,7 +823,7 @@ script AppDelegate
 
             try
                 delay 3
-                do shell script "hdiutil detach /tmp/" & (quoted form of Installer_Name & "_dmg")
+                do shell script "hdiutil detach ~/openinstallcreator/" & (quoted form of Installer_Name & "_dmg")
                 on error
                 set myAlert to NSAlert's alertWithMessageText_defaultButton_alternateButton_otherButton_informativeTextWithFormat_("Couldn't unmount InstallOS.dmg.", "OK", "Error code: 10", "", "Check your Available disk space.")
                 myAlert's beginSheetModalForWindow_modalDelegate_didEndSelector_contextInfo_(theWindow, me, "alertDidEnd", missing value)
@@ -836,11 +836,11 @@ script AppDelegate
         
         -- Remove temporary files
         progressText1's setStringValue: "Removing Temporary Files..."
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         delay 3
-        do shell script "rm -R /tmp/Install*"
-        do shell script "rm /tmp/pbzx"
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        do shell script "rm -R ~/openinstallcreator/Install*"
+        do shell script "rm ~/openinstallcreator/pbzx"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         progressText1's setStringValue: "Operation Completed."
         progressBar1's stopAnimation:me
 
@@ -850,7 +850,7 @@ script AppDelegate
                                 -- SIDE BAR ACTIONS --
                                 
     on createNormalInstallersViewClicked_(sender)
-        set flagspath to "/tmp/openinstallcreatorflags.plist"
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         set View1Status to (do shell script "defaults read " & flagspath & " View1Status")
         set View4Status to (do shell script "defaults read " & flagspath & " View4Status")
         if View4Status = "1" then
@@ -866,7 +866,7 @@ script AppDelegate
     on downloadAppleInstallersViewClicked_(sender) -- Only for 10.7
         set Volume_Version_Short to (do shell script "defaults read /System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5")
         if Volume_Version_Short is in {"10.7.", "10.8.", "10.9.", "10.10", "10.11", "10.12", "10.13", "10.14", "10.15"} then
-            set flagspath to "/tmp/openinstallcreatorflags.plist"
+            set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
             set View1Status to (do shell script "defaults read " & flagspath & " View1Status")
             set View4Status to (do shell script "defaults read " & flagspath & " View4Status")
             if View1Status = "1" then
@@ -900,6 +900,9 @@ script AppDelegate
 	
 	on applicationWillFinishLaunching_(aNotification)
         
+        do shell script "mkdir -p ~/openinstallcreator"
+        do shell script "chflags hidden ~/openinstallcreator"
+        
         -- First view (createnormalbootableinstaller)
         set VolumesList to (get paragraphs of (do shell script "ls /Volumes"))
         selectVolumePopUp0's addItemsWithTitles_(VolumesList)
@@ -907,8 +910,9 @@ script AppDelegate
         set selectedVolume to quoted form of selectedVolume
         
         set flagspath to POSIX path of (path to current application as text) & "Contents/Resources/openinstallcreatorflags.plist"
-        do shell script "cp " & flagspath & " /tmp"
+        do shell script "cp " & flagspath & " ~/openinstallcreator"
         
+        set flagspath to "~/openinstallcreator/openinstallcreatorflags.plist"
         set selectedVolume to (do shell script "echo " & selectedVolume & "| sed 's/ /\\\\ /g'")
         do shell script "defaults write " & flagspath & " SelectedVolume " & selectedVolume
         set InstallerPath to "unavailable"
@@ -928,25 +932,26 @@ script AppDelegate
         else
             try
                 set connection to "yes"
-                do shell script "curl -L -s -o /tmp/softwareupdate.sh https://raw.githubusercontent.com/Minh-Ton/openinstallcreator/master/SUdownload/softwareupdate.sh"
+                do shell script "curl -L -s -o ~/openinstallcreator/softwareupdate.sh https://raw.githubusercontent.com/Minh-Ton/openinstallcreator/master/SUdownload/softwareupdate.sh"
                 on error
                 set connection to "no"
             end try
         end if
         
         if connection = "yes" then
-            do shell script "chmod +x /tmp/softwareupdate.sh"
-            set interver to (do shell script "/tmp/softwareupdate.sh")
+            do shell script "chmod +x ~/openinstallcreator/softwareupdate.sh"
+            set interver to (do shell script "~/openinstallcreator/softwareupdate.sh")
             set infoplist to POSIX path of (path to current application as text) & "Contents/Info.plist"
             set currentver to (do shell script "defaults read " & infoplist & " CFBundleShortVersionString")
             if not (interver = currentver) then
                 display alert "A new version of 'openinstallcreator' has been release." message "Would you like to install the update?" buttons {"Later","Install now"} default button "Install now"
                 if the button returned of the result is "Install now" then
-                    do shell script "curl -L -s -o /tmp/softwareupdated.sh https://raw.githubusercontent.com/Minh-Ton/openinstallcreator/master/SUdownload/softwareupdated.sh"
+                    do shell script "curl -L -s -o ~/openinstallcreator/softwareupdated.sh https://raw.githubusercontent.com/Minh-Ton/openinstallcreator/master/SUdownload/softwareupdated.sh"
                     set appdir to POSIX path of (path to current application as text)
                     set appdir to (do shell script "echo " & (quoted form of appdir) & " | rev | cut -c 25- | rev")
-                    do shell script "touch /tmp/appdir"
-                    do shell script "echo " & (quoted form of appdir) & " >> /tmp/appdir"
+                    do shell script "touch ~/openinstallcreator/appdir"
+                    do shell script "cat /dev/null > ~/openinstallcreator/appdir"
+                    do shell script "echo " & (quoted form of appdir) & " >> ~/openinstallcreator/appdir"
                     set suhelper to POSIX path of (path to current application as text) & "Contents/Resources/openinstallcreatorUpdater.app"
                     do shell script "open " & suhelper
                 end if
