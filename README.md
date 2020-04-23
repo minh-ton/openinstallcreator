@@ -1,9 +1,8 @@
-[<img align="left" width="25%" src="Screenshots/download.png">](https://github.com/Minh-Ton/openinstallcreator/releases/download/beta5/openinstallcreator.dmg)
+<img src="https://github.com/Minh-Ton/openinstallcreator/raw/master/Source%20code/Resources/imac27.png" width="256"> 
 
 # [openinstallcreator beta](https://github.com/Minh-Ton/openinstallcreator)
+[<img align="left" width="25%" src="Screenshots/download.png">](https://github.com/Minh-Ton/openinstallcreator/releases/download/beta5/openinstallcreator.dmg)
 An open-source AppleScriptObj-C application allows you to make a bootable macOS/OS X Installer... and more.
-
-<img src="https://github.com/Minh-Ton/openinstallcreator/raw/master/Source%20code/Resources/imac27.png" width="256"> 
 
 ## Requirements
 - Minimum requirement: OS X 10.6 Snow Leopard and newer (requires OS X 10.7 or newer to download Installers).
