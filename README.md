@@ -3,7 +3,11 @@
 # [openinstallcreator beta](https://github.com/Minh-Ton/openinstallcreator)
 An open-source AppleScriptObj-C application allows you to make a bootable macOS/OS X Installer... and more.
 
+<p>
+
 [<img src="Screenshots/download.png">](https://github.com/Minh-Ton/openinstallcreator/releases/download/beta5/openinstallcreator.dmg)
+
+</p>
 
 ## Requirements
 - Minimum requirement: OS X 10.6 Snow Leopard and newer (requires OS X 10.7 or newer to download Installers).
