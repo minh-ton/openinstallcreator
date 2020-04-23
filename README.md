@@ -1,4 +1,4 @@
-# [openinstallcreator beta](https://github.com/Minh-Ton/openinstallcreator) <br><br>[![button](https://github.com/Minh-Ton/openinstallcreator/raw/master/Screenshots/download.png)](https://github.com/Minh-Ton/openinstallcreator/releases/download/beta4/openinstallcreator.dmg)
+# [openinstallcreator beta](https://github.com/Minh-Ton/openinstallcreator)[![button](https://github.com/Minh-Ton/openinstallcreator/raw/master/Screenshots/download.png)](https://github.com/Minh-Ton/openinstallcreator/releases/download/beta4/openinstallcreator.dmg)
 An open-source AppleScriptObj-C application allows you to make a bootable macOS/OS X Installer... and more.
 
 <img src="https://github.com/Minh-Ton/openinstallcreator/raw/master/Resources/imac27.png" width="256"> 
@@ -16,11 +16,8 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 - When the app is running in the background, it won't show the GUI when clicked onto the Dock Icon. A workaround for this is to **_secondary click_** the openinstallcreator Dock Icon, then choose **_"Show All Window"_**.
 - While the app is doing some heavy tasks, such as `Create Bootable Installer` or `Download Apple Installer`, the *"spinning rainbow cursor"* will appeared when hovering the cursor on the application GUI. *(It's still doing it work though, just because there are so many tasks that's being added to the queue, making the queue banked up)*.
 
-## Cannot launch openinstallcreator.app? 
-<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK1.png">
+## Credits
+- Thanks to [RMC Team](https://github.com/rmc-team)'s [macOS Downloader](https://github.com/rmc-team/macos-downloader), which I used to complete the `Download Apple Installers` feature.
 
-***1. Secondary click the app, and choose "Open".***
-
-<img src="https://github.com/Minh-Ton/openinstallcreator/blob/master/Screenshots/GK2.png"> 
-
-***2. A dialog will appear. Select "Open" again.***
+## License
+- This project is licensed under the GPL-3.0 License
