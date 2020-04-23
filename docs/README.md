@@ -11,10 +11,10 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 
 
 ## Requirements
-- Minimum requirement: OS X 10.6 Snow Leopard and newer (requires OS X 10.7 or newer to download Installers).
-- Supported Installers: OS X 10.9 Mavericks to macOS 10.15 Catalina.
+- Minimum requirement: ***OS X 10.6 Snow Leopard and newer (requires OS X 10.7 or newer to download Installers).***
+- Supported Installers: ***OS X 10.9 Mavericks to macOS 10.15 Catalina.***
+- Installers Available to download: ***OS X 10.10 Yosemite to macOS 10.15 Catalina.***
 - Bootable USB/Disk size: ***At least 8GB for OS X 10.9 to macOS 10.14; 10GB for macOS 10.15 Catalina.***
-- Installers Available to download: 10.10 Yosemite to 10.15 Catalina.
 
 ## Screenshots (beta 3)
 
