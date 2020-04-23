@@ -1,7 +1,7 @@
 <img align="right" width="30%" src="https://raw.githubusercontent.com/Minh-Ton/openinstallcreator/master/Source%20code/Resources/imac27.png">
 
 # [openinstallcreator beta](https://github.com/Minh-Ton/openinstallcreator)
-An open-source AppleScriptObj-C application allows you to make a bootable macOS/OS X Installer... and download .
+An open-source AppleScriptObj-C application allows you to make a bootable macOS/OS X Installer... and download macOS.
 
 <p>
 
@@ -14,6 +14,7 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 - Minimum requirement: OS X 10.6 Snow Leopard and newer (requires OS X 10.7 or newer to download Installers).
 - Supported Installers: OS X 10.9 Mavericks to macOS 10.15 Catalina.
 - Bootable USB/Disk size: ***At least 8GB for OS X 10.9 to macOS 10.14; 10GB for macOS 10.15 Catalina.***
+- Installers Available to download: 10.10 Yosemite to 10.15 Catalina.
 
 ## Screenshots (beta 3)
 
