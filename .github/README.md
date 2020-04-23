@@ -1,4 +1,4 @@
-<img align="right" width="30%" src="Source%20code/Resources/imac27.png">
+<img align="right" width="30%" src="https://raw.githubusercontent.com/Minh-Ton/openinstallcreator/master/Source%20code/Resources/imac27.png">
 
 # [openinstallcreator beta](https://github.com/Minh-Ton/openinstallcreator)
 An open-source AppleScriptObj-C application allows you to make a bootable macOS/OS X Installer... and more.
@@ -16,7 +16,7 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 
 ## Screenshots (beta 3)
 
-<img src="https://github.com/Minh-Ton/openinstallcreator/raw/master/Screenshots/openinstallcreator.png" width="400"> <img src="https://github.com/Minh-Ton/openinstallcreator/raw/master/Screenshots/openinstallcreator2.png" width="400"> 
+<img src="Screenshots/openinstallcreator.png" width="400"> <img src="Screenshots/openinstallcreator2.png" width="400"> 
 
 ## Limitations/Issues
 <details>
