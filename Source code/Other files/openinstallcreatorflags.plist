@@ -17,7 +17,7 @@
 	<key>CheckUpdateAtStartup</key>
 	<string>NO</string>
 	<key>CheckStructure</key>
-	<string>if [[ -e ~/openinstallcreator/InstallESD/BaseSystem.dmg ]]; then echo &quot;tmp&quot;; fi</string>
+	<string>if [[ -e /tmp/InstallESD/BaseSystem.dmg ]]; then echo &quot;tmp&quot;; fi</string>
 	<key>CheckCurl</key>
 	<string>if [[ ! -f /opt/local/bin/curl || ! -f /opt/local/bin/curl ]]; then echo &quot;incompatible&quot;; fi</string>
 	<key>installerdownload</key>

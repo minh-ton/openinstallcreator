@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "beta5.2"
+echo "beta6"

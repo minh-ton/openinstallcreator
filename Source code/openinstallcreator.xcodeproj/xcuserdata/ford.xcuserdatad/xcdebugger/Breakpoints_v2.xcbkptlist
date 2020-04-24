@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.9805191"
+            timestampString = "609427149.514518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "9"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.981286"
+            timestampString = "609427149.514667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.981792"
+            timestampString = "609427149.51478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "on selectOSVersionPopUpClicked_(sender)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "on selectOSVersionPopUpClicked:sender"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.982318"
+            timestampString = "609427149.514886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "on CreateNormalInstallMedia(InstallerPath,SelectedVolume,flagspath)"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "on CreateNormalInstallMedia(InstallerPath, selectedVolume, flagspath)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.982803"
+            timestampString = "609427149.514994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "on CreateNormalInstallMedia(InstallerPath,SelectedVolume,flagspath)"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "on CreateNormalInstallMedia(InstallerPath, selectedVolume, flagspath)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.983315"
+            timestampString = "609427149.5151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
-            landmarkName = "on downloadAppleInstallers()"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
+            landmarkName = "on CreateNormalInstallMedia(InstallerPath, selectedVolume, flagspath)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,12 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.983838"
+            timestampString = "609427149.51524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "354"
-            endingLineNumber = "354"
-            landmarkName = "on downloadAppleInstallers()"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
+            landmarkName = "on CreateNormalInstallMedia(InstallerPath, selectedVolume, flagspath)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,43 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.984591"
+            timestampString = "609427149.515347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "854"
-            endingLineNumber = "854"
-            landmarkName = "on createNormalInstallersViewClicked_(sender)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.985316"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "856"
-            endingLineNumber = "856"
-            landmarkName = "on createNormalInstallersViewClicked_(sender)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.985808"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "897"
-            endingLineNumber = "897"
+            startingLineNumber = "878"
+            endingLineNumber = "878"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -250,13 +218,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.9862961"
+            timestampString = "609427149.515456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "908"
-            endingLineNumber = "908"
-            landmarkName = "on applicationWillFinishLaunching_(aNotification)"
-            landmarkType = "7">
+            startingLineNumber = "880"
+            endingLineNumber = "880"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -266,11 +234,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "openinstallcreator/AppDelegate.applescript"
-            timestampString = "609308598.986771"
+            timestampString = "609427149.5155621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "973"
-            endingLineNumber = "973">
+            startingLineNumber = "921"
+            endingLineNumber = "921"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "openinstallcreator/AppDelegate.applescript"
+            timestampString = "609427149.515669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "929"
+            endingLineNumber = "929"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "openinstallcreator/AppDelegate.applescript"
+            timestampString = "609427149.515805"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "991"
+            endingLineNumber = "991"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -303,6 +305,22 @@
             endingLineNumber = "370"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "openinstallcreator/AppDelegate.applescript"
+            timestampString = "609427149.5160201"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
+            landmarkName = "on CreateNormalInstallMedia(InstallerPath, selectedVolume, flagspath)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

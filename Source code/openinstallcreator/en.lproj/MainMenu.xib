@@ -104,7 +104,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ZmG-cU-eX2">
                         <rect key="frame" x="19" y="456" width="136" height="29"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Beta 5" id="FlS-zT-oUR">
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Beta 6" id="FlS-zT-oUR">
                             <font key="font" metaFont="system" size="24"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -190,7 +190,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="BlW-Iq-LFy">
                                         <rect key="frame" x="57" y="131" width="413" height="17"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Click the OS X Icon to browse for a macOS Installer... (10.9 to 10.15)" id="zaH-61-aqE">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Click the OS X icon to browse for a macOS Installer... (10.7 to 10.15)" id="zaH-61-aqE">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -307,7 +307,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="FE4-dc-Gwa">
                                         <rect key="frame" x="57" y="131" width="413" height="17"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Click the Folder Icon to select a save folder..." id="9XP-cD-epO">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Click the Folder icon to select a save folder..." id="9XP-cD-epO">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -352,6 +352,17 @@
                             </customView>
                         </subviews>
                     </customView>
+                    <button verticalHuggingPriority="750" id="h8e-i3-p9V">
+                        <rect key="frame" x="14" y="29" width="146" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Reset Application" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B1R-Iw-8Ku">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetApplicationClicked:" target="Voe-Tx-rLC" id="Nth-pa-eNX"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="123" y="-107"/>

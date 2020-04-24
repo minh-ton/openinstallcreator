@@ -3,25 +3,25 @@
 killall openinstallcreator
 
 echo "Preparing..."
-chmod +x ~/openinstallcreator/softwareupdated.sh
-download_link=$(~/openinstallcreator/softwareupdated.sh)
+chmod +x /tmp/softwareupdated.sh
+download_link=$(/tmp/softwareupdated.sh)
 
 echo "Downloading the update..."
-curl -L -s -o ~/openinstallcreator/release.zip $download_link
+curl -L -s -o /tmp/release.zip $download_link
 
 echo "Extracting packages..."
-unzip -qq ~/openinstallcreator/release.zip -d ~/openinstallcreator
+unzip -qq /tmp/release.zip -d /tmp
 
 echo "Moving files into place..."
-app_path=$(cat ~/openinstallcreator/appdir)
+app_path=$(cat /tmp/appdir)
 rm -R $app_path/openinstallcreator.app
-cp -R ~/openinstallcreator/openinstallcreator.app $app_path
-rm -R ~/openinstallcreator/openinstallcreator.app
-rm ~/openinstallcreator/appdir
-rm ~/openinstallcreator/release.zip
-rm ~/openinstallcreator/softwareupdate.sh
-rm ~/openinstallcreator/softwareupdated.sh
-rm -R ~/openinstallcreator/__MACOSX
+cp -R /tmp/openinstallcreator.app $app_path
+rm -R /tmp/openinstallcreator.app
+rm /tmp/appdir
+rm /tmp/release.zip
+rm /tmp/softwareupdate.sh
+rm /tmp/softwareupdated.sh
+rm -R /tmp/__MACOSX
 
 echo "Done"
 
