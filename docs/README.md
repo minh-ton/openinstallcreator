@@ -8,7 +8,7 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 [<img src="Screenshots/download.png" width="225">](https://dl.dropboxusercontent.com/s/8ychq9zfvni9jjq/openinstallcreator.dmg)
 
 </p>
-
+ 
 
 ## Requirements
 - Minimum requirement: ***OS X 10.6 Snow Leopard and newer (requires OS X 10.7 or newer to download Installers).***
