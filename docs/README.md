@@ -18,10 +18,10 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 
 ## More downloads
 
-- Although you cannot download OS X 10.7 - 10.9 Installers using the app, these are the link to download the original version of the Installer Apps.
+#### Although you cannot download OS X 10.7 - 10.9 Installers using the app, these are the link to download the original version of the Installer Apps.
 
 <details>
-  <summary>More downloads for 10.7 - 10.9</summary>
+  <summary>Download OS X 10.7 - 10.9 Installers</summary>
   
   - [Download Install OS X 10.9 Mavericks.app]()
   
@@ -31,10 +31,10 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
   
 </details>
 
-- For these 10.5 and 10.6 Installers, they are a disk image so you cannot use it to create a bootable installer with the app. However, you can restore to create a bootable installer using Disk Utility.
+#### For these 10.5 and 10.6 Installers, they are a disk image so you cannot use it to create a bootable installer with the app. However, you can restore to create a bootable installer using Disk Utility.
 
 <details>
-  <summary>More downloads for 10.5 and 10.6</summary>
+  <summary>Download Mac OS X 10.5 - 10.6 Installers</summary>
   
   - [Download `MacOSX_SnowLeopard.dmg`](https://mega.nz/file/xrwVmTYa#jQ1jIle3mxHUKyZ0TZ-D2QeBRJ4y90FTOO0s79ghkuw)
   
