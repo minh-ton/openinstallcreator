@@ -22,17 +22,24 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 
 <details>
   <summary>More downloads for 10.7 - 10.9</summary>
+  
   - [Download Install OS X 10.9 Mavericks.app]()
+  
   - [Download Install OS X 10.8 Mountain Lion.app]()
+  
   - [Download Install Mac OS X 10.7 Lion.app]()
+  
 </details>
 
 - For these 10.5 and 10.6 Installers, they are a disk image so you cannot use it to create a bootable installer with the app. However, you can restore to create a bootable installer using Disk Utility.
 
 <details>
   <summary>More downloads for 10.5 and 10.6</summary>
-  - [Download MacOSX_SnowLeopard.dmg](https://mega.nz/file/xrwVmTYa#jQ1jIle3mxHUKyZ0TZ-D2QeBRJ4y90FTOO0s79ghkuw)
-  - [Download MacOSX_Leopard.iso](https://mega.nz/file/N6JnlIiZ#VCz-varFu5_xSyklFA7nUdwauWgS5GNlqdiNADz8YeM)
+  
+  - [Download `MacOSX_SnowLeopard.dmg`](https://mega.nz/file/xrwVmTYa#jQ1jIle3mxHUKyZ0TZ-D2QeBRJ4y90FTOO0s79ghkuw)
+  
+  - [Download `MacOSX_Leopard.iso`](https://mega.nz/file/N6JnlIiZ#VCz-varFu5_xSyklFA7nUdwauWgS5GNlqdiNADz8YeM)
+  
 </details>
 
 ## Screenshots
