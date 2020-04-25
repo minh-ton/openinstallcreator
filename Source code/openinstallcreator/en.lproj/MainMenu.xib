@@ -102,9 +102,9 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ZmG-cU-eX2">
-                        <rect key="frame" x="19" y="456" width="136" height="29"/>
+                        <rect key="frame" x="-3" y="456" width="178" height="29"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0" id="FlS-zT-oUR">
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0.2" id="FlS-zT-oUR">
                             <font key="font" metaFont="system" size="24"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -227,12 +227,34 @@
                                             <action selector="selectInstallerButton0Clicked:" target="Voe-Tx-rLC" id="3eT-Tu-3NU"/>
                                         </connections>
                                     </button>
+                                    <button id="kbi-HR-ngb">
+                                        <rect key="frame" x="92" y="388" width="19" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRefreshFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Uej-Xd-rQx">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="refreshVolumeList:" target="Voe-Tx-rLC" id="cee-Y3-lUn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </customView>
                             <customView id="e2u-Wj-iIf" userLabel="Download Apple Installers View">
                                 <rect key="frame" x="0.0" y="0.0" width="528" height="500"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
+                                    <button id="a3f-qL-EEU">
+                                        <rect key="frame" x="81" y="131" width="364" height="271"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="DownloadsFolder" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5tN-Qy-NfH">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="browseSaveFolderClicked:" target="Voe-Tx-rLC" id="JwM-9N-d9U"/>
+                                        </connections>
+                                    </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="CvJ-vB-fV0">
                                         <rect key="frame" x="-2" y="440" width="532" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -333,17 +355,6 @@
                                             <action selector="readybutton1Clicked:" target="Voe-Tx-rLC" id="5wI-yC-tj7"/>
                                         </connections>
                                     </button>
-                                    <button id="a3f-qL-EEU">
-                                        <rect key="frame" x="112" y="144" width="293" height="237"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="DownloadsFolder" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5tN-Qy-NfH">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="browseSaveFolderClicked:" target="Voe-Tx-rLC" id="JwM-9N-d9U"/>
-                                        </connections>
-                                    </button>
                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="bar" id="KOp-RJ-SIA">
                                         <rect key="frame" x="35" y="72" width="460" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -370,6 +381,7 @@
     </objects>
     <resources>
         <image name="DownloadsFolder" width="512" height="512"/>
+        <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
         <image name="arrowbutton" width="30" height="30"/>
         <image name="elcapitan" width="512" height="512"/>
     </resources>
