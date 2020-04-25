@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "https://dl.dropboxusercontent.com/s/ewjhiluxn0nl45g/release.zip"
+echo "https://github.com/Minh-Ton/openinstallcreator/raw/master/Releases/Version%201.0.2/release.zip"
