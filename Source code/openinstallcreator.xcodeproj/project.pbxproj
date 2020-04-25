@@ -369,7 +369,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OSACOMPILE_EXECUTE_ONLY = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fordApps.openinstallcreater;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fordApps.openinstallcreator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -397,7 +397,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OSACOMPILE_EXECUTE_ONLY = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fordApps.openinstallcreater;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fordApps.openinstallcreator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
