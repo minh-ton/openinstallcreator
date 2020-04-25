@@ -50,9 +50,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1xn-AS-yOM">
-                        <rect key="frame" x="73" y="9" width="256" height="14"/>
+                        <rect key="frame" x="-2" y="9" width="404" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="Copyright © 2020 fordApps. All rights reserved." id="DH6-4W-FaL">
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Copyright © 2020 fordApps. All rights reserved." id="DH6-4W-FaL">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
