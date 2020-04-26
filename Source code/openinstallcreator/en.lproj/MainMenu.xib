@@ -104,7 +104,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ZmG-cU-eX2">
                         <rect key="frame" x="-3" y="456" width="178" height="29"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0.2" id="FlS-zT-oUR">
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0.3" id="FlS-zT-oUR">
                             <font key="font" metaFont="system" size="24"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
