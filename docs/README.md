@@ -5,7 +5,7 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
 
 <p>
 
-[<img src="Screenshots/download.png" width="225">](https://github.com/Minh-Ton/openinstallcreator/raw/master/Releases/Version%201.0.3/openinstallcreator.dmg)
+[<img src="Screenshots/download.png" width="225">](https://github.com/Minh-Ton/openinstallcreator/raw/master/Releases/Version%201.0.2/openinstallcreator.dmg)
 
 </p>
  

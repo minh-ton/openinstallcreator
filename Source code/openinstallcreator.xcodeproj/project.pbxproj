@@ -10,13 +10,13 @@
 		0101BEEA2453D13E002FA48F /* cacert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 0101BEE82453D13D002FA48F /* cacert.pem */; };
 		0101BEEB2453D13E002FA48F /* curl in Resources */ = {isa = PBXBuildFile; fileRef = 0101BEE92453D13E002FA48F /* curl */; };
 		01449873244EF00300885005 /* downloadosflags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01449872244EF00300885005 /* downloadosflags.plist */; };
-		014D8E70243867C000CDFC20 /* elcapitan.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 014D8E6F243867C000CDFC20 /* elcapitan.tiff */; };
+		01482E1B2456EE4A0035B2CD /* macos.icns in Resources */ = {isa = PBXBuildFile; fileRef = 01482E1A2456EE4A0035B2CD /* macos.icns */; };
 		0160047E244ABF7D0025D2BB /* createinstallfiles.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0160047D244ABF7D0025D2BB /* createinstallfiles.sh */; };
 		0169CE722449AC0800B68E67 /* openinstallcreatorflags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0169CE712449AC0800B68E67 /* openinstallcreatorflags.plist */; };
 		01770E51244AE720003C924C /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01770E4F244AE720003C924C /* About.xib */; };
 		01770E53244AE898003C924C /* imac27.png in Resources */ = {isa = PBXBuildFile; fileRef = 01770E52244AE897003C924C /* imac27.png */; };
 		01B8E527245545B300D7D477 /* SoftwareUpdate.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B8E526245545B300D7D477 /* SoftwareUpdate.png */; };
-		01BB7EE9244B4C5700F19CED /* DownloadsFolder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 01BB7EE8244B4C5700F19CED /* DownloadsFolder.icns */; };
+		01BB7EE9244B4C5700F19CED /* downloads.icns in Resources */ = {isa = PBXBuildFile; fileRef = 01BB7EE8244B4C5700F19CED /* downloads.icns */; };
 		01BB7EEB244BE62000F19CED /* pbzx in Resources */ = {isa = PBXBuildFile; fileRef = 01BB7EEA244BE62000F19CED /* pbzx */; };
 		01BB7EED244BE65300F19CED /* volumeicon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01BB7EEC244BE65300F19CED /* volumeicon.bundle */; };
 		01F3D54C244C0DDE00E6FE9E /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7D9F024361C5800729EE0 /* AppleScriptObjC.framework */; };
@@ -32,13 +32,13 @@
 		0101BEE92453D13E002FA48F /* curl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = curl; sourceTree = "<group>"; };
 		013B7EDB244DA1D60065F710 /* openinstallcreator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openinstallcreator.entitlements; sourceTree = "<group>"; };
 		01449872244EF00300885005 /* downloadosflags.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = downloadosflags.plist; sourceTree = "<group>"; };
-		014D8E6F243867C000CDFC20 /* elcapitan.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = elcapitan.tiff; sourceTree = "<group>"; };
+		01482E1A2456EE4A0035B2CD /* macos.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = macos.icns; sourceTree = "<group>"; };
 		0160047D244ABF7D0025D2BB /* createinstallfiles.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = createinstallfiles.sh; sourceTree = "<group>"; };
 		0169CE712449AC0800B68E67 /* openinstallcreatorflags.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = openinstallcreatorflags.plist; sourceTree = "<group>"; };
 		01770E50244AE720003C924C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/About.xib; sourceTree = "<group>"; };
 		01770E52244AE897003C924C /* imac27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imac27.png; sourceTree = "<group>"; };
 		01B8E526245545B300D7D477 /* SoftwareUpdate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoftwareUpdate.png; sourceTree = "<group>"; };
-		01BB7EE8244B4C5700F19CED /* DownloadsFolder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DownloadsFolder.icns; sourceTree = "<group>"; };
+		01BB7EE8244B4C5700F19CED /* downloads.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = downloads.icns; sourceTree = "<group>"; };
 		01BB7EEA244BE62000F19CED /* pbzx */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = pbzx; sourceTree = "<group>"; };
 		01BB7EEC244BE65300F19CED /* volumeicon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = volumeicon.bundle; sourceTree = "<group>"; };
 		01F7D9ED24361C5800729EE0 /* openinstallcreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openinstallcreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,8 +83,8 @@
 				01B8E526245545B300D7D477 /* SoftwareUpdate.png */,
 				01F7DA06243630DD00729EE0 /* arrowbutton.tiff */,
 				01770E52244AE897003C924C /* imac27.png */,
-				014D8E6F243867C000CDFC20 /* elcapitan.tiff */,
-				01BB7EE8244B4C5700F19CED /* DownloadsFolder.icns */,
+				01482E1A2456EE4A0035B2CD /* macos.icns */,
+				01BB7EE8244B4C5700F19CED /* downloads.icns */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -192,14 +192,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01BB7EE9244B4C5700F19CED /* DownloadsFolder.icns in Resources */,
+				01BB7EE9244B4C5700F19CED /* downloads.icns in Resources */,
 				01770E53244AE898003C924C /* imac27.png in Resources */,
 				01B8E527245545B300D7D477 /* SoftwareUpdate.png in Resources */,
-				014D8E70243867C000CDFC20 /* elcapitan.tiff in Resources */,
 				01BB7EEB244BE62000F19CED /* pbzx in Resources */,
 				01449873244EF00300885005 /* downloadosflags.plist in Resources */,
 				0169CE722449AC0800B68E67 /* openinstallcreatorflags.plist in Resources */,
 				0160047E244ABF7D0025D2BB /* createinstallfiles.sh in Resources */,
+				01482E1B2456EE4A0035B2CD /* macos.icns in Resources */,
 				0101BEEA2453D13E002FA48F /* cacert.pem in Resources */,
 				01770E51244AE720003C924C /* About.xib in Resources */,
 				01BB7EED244BE65300F19CED /* volumeicon.bundle in Resources */,

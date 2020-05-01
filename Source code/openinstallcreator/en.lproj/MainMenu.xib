@@ -190,7 +190,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="BlW-Iq-LFy">
                                         <rect key="frame" x="-2" y="131" width="532" height="17"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Click the OS X icon to browse for a macOS Installer... (10.7 to 10.15)" id="zaH-61-aqE">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Click the macOS icon to browse for a macOS Installer... (10.7 to 10.15)" id="zaH-61-aqE">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -219,7 +219,7 @@
                                     <button id="8vY-FJ-GuY">
                                         <rect key="frame" x="133" y="154" width="263" height="230"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="elcapitan" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="1ki-B9-N7B">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="macos" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="1ki-B9-N7B">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -247,7 +247,7 @@
                                     <button id="a3f-qL-EEU">
                                         <rect key="frame" x="81" y="131" width="364" height="271"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="DownloadsFolder" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5tN-Qy-NfH">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="downloads" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5tN-Qy-NfH">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -374,15 +374,26 @@
                             <action selector="resetApplicationClicked:" target="Voe-Tx-rLC" id="Nth-pa-eNX"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" id="1Sf-OW-JDV">
+                        <rect key="frame" x="0.0" y="331" width="174" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" title="Create Installer ISO File" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K0S-CF-MMg">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="downloadAppleInstallersViewClicked:" target="Voe-Tx-rLC" id="1wu-i1-zHZ"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="123" y="-107"/>
         </window>
     </objects>
     <resources>
-        <image name="DownloadsFolder" width="512" height="512"/>
         <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
         <image name="arrowbutton" width="30" height="30"/>
-        <image name="elcapitan" width="512" height="512"/>
+        <image name="downloads" width="512" height="512"/>
+        <image name="macos" width="512" height="512"/>
     </resources>
 </document>
