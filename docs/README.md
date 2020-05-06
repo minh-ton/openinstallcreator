@@ -59,7 +59,6 @@ An open-source AppleScriptObj-C application allows you to make a bootable macOS/
   
  - As I'm using a vintage Mac, which only supports up to OS X 10.15 El Capitan so if there is any issue with 10.12 - 10.15 bootable installer creation, please let me know.
  
- - Due to the slow speed of downloading files from GitHub, I will push updates through Dropbox for a faster speed & reliability.
 </details>
   
 ## Credits
